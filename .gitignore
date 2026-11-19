@@ -2,3 +2,11 @@
 .env
 .env.*
 !.env.example
+
+# Local research outputs and Python cache
+/data/
+__pycache__/
+*.pyc
+
+node_modules/
+dist/

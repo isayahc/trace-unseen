@@ -1,5 +1,12 @@
 # trace-unseen
 
+## Task discovery pilot
+
+Run `npm install` then `npm run research` to research injection-molding tasks with
+a custom TypeScript OpenCode SDK agent, Tavily tools, and SQLite persistence.
+Customize agents in `src/agents/index.ts`; press F5 in VS Code to debug the job.
+See [job setup and outputs](docs/task-discovery-job.md).
+
 ## Human labor in U.S. manufacturing
 
 These charts compare ten selected industry groups from the 2022 Economic Census. They include the five largest four-digit manufacturing groups by production-worker hours and five additional groups for comparison. Both charts use the same industries, sorted by the measure shown.

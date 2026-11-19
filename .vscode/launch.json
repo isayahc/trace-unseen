@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug product graph — Nike fleece hoodie",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node",
+      "windows": { "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node.exe" },
+      "runtimeArgs": ["--import", "tsx"],
+      "program": "${workspaceFolder}/src/jobs/discover-tasks.ts",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "args": ["--agent", "journey-researcher", "--product", "Nike fleece hoodie"]
+    },
+    {
+      "name": "Debug task research agent (TypeScript SDK)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node.exe"
+      },
+      "runtimeArgs": ["--import", "tsx"],
+      "program": "${workspaceFolder}/src/jobs/discover-tasks.ts",
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+      "args": [
+        "--agent", "task-researcher",
+        "--sector", "Plastics product manufacturing",
+        "--naics", "3261",
+        "--process", "injection molding"
+      ]
+    }
+  ]
+}
