@@ -1,0 +1,1785 @@
+{
+  "nodes": {
+    "root": {
+      "id": "root",
+      "name": "Root",
+      "operation": "seed",
+      "parameters": {},
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": null,
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0001": {
+      "id": "feat-0001",
+      "name": "96 m² comparison footprint",
+      "operation": "create_box",
+      "parameters": {
+        "length": 12000,
+        "width": 8000,
+        "height": 200.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "1f1d3734-a312-4b8c-ae5c-c166530c4f27",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0002": {
+      "id": "feat-0002",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0001",
+        "offset": [
+          6000,
+          4000,
+          -100.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0001",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0001"
+      ],
+      "shape_id": "259f9ae1-f89f-4113-96e2-b9934c5c7c11",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0003": {
+      "id": "feat-0003",
+      "name": "01 / Infeed",
+      "operation": "create_box",
+      "parameters": {
+        "length": 2200.0,
+        "width": 800.0,
+        "height": 300.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "a8d28ad6-ac6b-4582-904b-ac48894e3a07",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0004": {
+      "id": "feat-0004",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0003",
+        "offset": [
+          1300.0,
+          4000,
+          850.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0003",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0003"
+      ],
+      "shape_id": "435c053d-3960-4137-9db3-3e399541f669",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0005": {
+      "id": "feat-0005",
+      "name": "02 / Inspection conveyor",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1600.0,
+        "width": 800.0,
+        "height": 300.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "3c2eba0c-6047-49fc-a63e-50961acf810c",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0006": {
+      "id": "feat-0006",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0005",
+        "offset": [
+          3200.0,
+          4000,
+          850.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0005",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0005"
+      ],
+      "shape_id": "95ed2d53-0d5d-4f90-8207-ae910d20b229",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0007": {
+      "id": "feat-0007",
+      "name": "Vision head",
+      "operation": "create_box",
+      "parameters": {
+        "length": 800.0,
+        "width": 700.0,
+        "height": 500.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "c96afe7b-26ea-4831-8757-68e8a178cb60",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0008": {
+      "id": "feat-0008",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0007",
+        "offset": [
+          3200.0,
+          4000,
+          1650.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0007",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0007"
+      ],
+      "shape_id": "63752f5e-aac0-40c3-9412-d3be9d25168f",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0009": {
+      "id": "feat-0009",
+      "name": "03 / Reject gate",
+      "operation": "create_box",
+      "parameters": {
+        "length": 800.0,
+        "width": 800.0,
+        "height": 300.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "ce04db36-faf2-4a93-a7de-525d6c43f3ae",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0010": {
+      "id": "feat-0010",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0009",
+        "offset": [
+          4400.0,
+          4000,
+          850.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0009",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0009"
+      ],
+      "shape_id": "e7476810-237e-4a51-b485-f42b7ca3ecc4",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0011": {
+      "id": "feat-0011",
+      "name": "Reject / quarantine buffer",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1200.0,
+        "width": 1200.0,
+        "height": 900.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "3e4846d8-ef44-41fd-ba7e-04d52638549d",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0012": {
+      "id": "feat-0012",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0011",
+        "offset": [
+          4400.0,
+          5100.0,
+          450.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0011",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0011"
+      ],
+      "shape_id": "6f317631-6884-4d0c-b932-cde1870b7a6a",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0013": {
+      "id": "feat-0013",
+      "name": "04 / Accumulate accepted cans",
+      "operation": "create_box",
+      "parameters": {
+        "length": 2600.0,
+        "width": 1200.0,
+        "height": 300.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "26d6da42-4ddd-4f6f-b307-9987bf33b1bb",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0014": {
+      "id": "feat-0014",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0013",
+        "offset": [
+          6100.0,
+          4000,
+          850.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0013",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0013"
+      ],
+      "shape_id": "c26fcc5a-b083-4664-a123-f9acd9c51c49",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0015": {
+      "id": "feat-0015",
+      "name": "05 / Pallet build position",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1200.0,
+        "width": 1200.0,
+        "height": 400.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "13c4884b-189c-4f65-aed8-9ab384a2c207",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0016": {
+      "id": "feat-0016",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0015",
+        "offset": [
+          8600.0,
+          4000,
+          200.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0015",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0015"
+      ],
+      "shape_id": "391b1346-9ae0-4659-9f62-eb4a941a3c8f",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0017": {
+      "id": "feat-0017",
+      "name": "06 / Finished pallet outfeed",
+      "operation": "create_box",
+      "parameters": {
+        "length": 2400.0,
+        "width": 1400.0,
+        "height": 500.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "66419009-3564-4de7-965c-b95624de43c0",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0018": {
+      "id": "feat-0018",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0017",
+        "offset": [
+          10600.0,
+          4000,
+          250.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0017",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0017"
+      ],
+      "shape_id": "4a772eea-6f5a-4216-b9b9-4d7aadb4c8da",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0019": {
+      "id": "feat-0019",
+      "name": "Empty pallets and layer sheets",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1800.0,
+        "width": 1600.0,
+        "height": 1400.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "1ac65fda-2127-428e-87b0-bcbb17f3489e",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0020": {
+      "id": "feat-0020",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0019",
+        "offset": [
+          9000,
+          6100.0,
+          700.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0019",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0019"
+      ],
+      "shape_id": "ac39dd33-7b03-4843-8592-ec290e7695b2",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0021": {
+      "id": "feat-0021",
+      "name": "Supervisory console",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1100.0,
+        "width": 650.0,
+        "height": 1200.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "9903c0c9-93dc-46a3-9224-1b09f8792010",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0022": {
+      "id": "feat-0022",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0021",
+        "offset": [
+          1400.0,
+          1800.0,
+          600.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0021",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0021"
+      ],
+      "shape_id": "40a6f05f-d4c2-4f2b-9b34-482b982aab39",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0023": {
+      "id": "feat-0023",
+      "name": "Layer palletizer column A",
+      "operation": "create_box",
+      "parameters": {
+        "length": 300.0,
+        "width": 300.0,
+        "height": 2600.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "85a91da7-3988-40c6-a7f7-6ecd91fad3ed",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0024": {
+      "id": "feat-0024",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0023",
+        "offset": [
+          7800.0,
+          2800.0,
+          1300.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0023",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0023"
+      ],
+      "shape_id": "0bc74f7d-2bb1-45c7-a021-2906ac2f4789",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0025": {
+      "id": "feat-0025",
+      "name": "Layer palletizer column B",
+      "operation": "create_box",
+      "parameters": {
+        "length": 300.0,
+        "width": 300.0,
+        "height": 2600.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "8f7c4ef3-9c5e-4bc6-916d-75621db72dc9",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0026": {
+      "id": "feat-0026",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0025",
+        "offset": [
+          9400.0,
+          5200.0,
+          1300.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0025",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0025"
+      ],
+      "shape_id": "c8e5b74e-412c-437b-b376-09622fa1f9e5",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0027": {
+      "id": "feat-0027",
+      "name": "Layer-transfer bridge",
+      "operation": "create_box",
+      "parameters": {
+        "length": 2300.0,
+        "width": 2800.0,
+        "height": 250.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "8a5ef4b1-cb63-445e-b714-14b3b72675e9",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0028": {
+      "id": "feat-0028",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0027",
+        "offset": [
+          8600.0,
+          4000,
+          2700.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0027",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0027"
+      ],
+      "shape_id": "c43f3c0b-47bb-4c37-848a-fa44bb6c3456",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0029": {
+      "id": "feat-0029",
+      "name": "Layer gripper",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1100.0,
+        "width": 1100.0,
+        "height": 250.0
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "d436aa62-3d03-45a5-92da-f68e31f55e98",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0030": {
+      "id": "feat-0030",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0029",
+        "offset": [
+          8200.0,
+          4000,
+          2200.0
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0029",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0029"
+      ],
+      "shape_id": "2c1c2e8d-f861-4158-8b6f-cbe9bf1007b1",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0031": {
+      "id": "feat-0031",
+      "name": "Automatic layer-sheet feed",
+      "operation": "create_box",
+      "parameters": {
+        "length": 1500.0,
+        "width": 1500.0,
+        "height": 2000
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "5c42f636-347b-4c36-9d2d-c9da78aef0f4",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0032": {
+      "id": "feat-0032",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0031",
+        "offset": [
+          7000,
+          6100.0,
+          1000
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0031",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0031"
+      ],
+      "shape_id": "a7fbf3ed-a3ff-4182-af98-fe2d199cbe53",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0033": {
+      "id": "feat-0033",
+      "name": "Cell separation",
+      "operation": "create_box",
+      "parameters": {
+        "length": 4200.0,
+        "width": 80.0,
+        "height": 2000
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": null,
+      "tool_refs": [],
+      "depends_on": [],
+      "shape_id": "0d8279b9-3f57-4ae9-88a4-7f48990fe1a5",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    },
+    "feat-0034": {
+      "id": "feat-0034",
+      "name": "Translate",
+      "operation": "translate",
+      "parameters": {
+        "shape_id": "feat-0033",
+        "offset": [
+          8300.0,
+          2400.0,
+          1000
+        ]
+      },
+      "typed_parameters": {},
+      "parameter_bindings": [],
+      "sketch_id": null,
+      "parent_id": "feat-0033",
+      "tool_refs": [],
+      "depends_on": [
+        "feat-0033"
+      ],
+      "shape_id": "16412657-f512-46bb-911f-d35b1f901aca",
+      "status": "built",
+      "replay_shape_id": null,
+      "rebuild_error": null,
+      "suppressed": false,
+      "mate_id": null,
+      "is_assembly_mate": false
+    }
+  },
+  "root_id": "root",
+  "active_branch": "main",
+  "branch_snapshots": {
+    "main": {
+      "root": {
+        "id": "root",
+        "name": "Root",
+        "operation": "seed",
+        "parameters": {},
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": null,
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0001": {
+        "id": "feat-0001",
+        "name": "96 m² comparison footprint",
+        "operation": "create_box",
+        "parameters": {
+          "length": 12000,
+          "width": 8000,
+          "height": 200.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "1f1d3734-a312-4b8c-ae5c-c166530c4f27",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0002": {
+        "id": "feat-0002",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0001",
+          "offset": [
+            6000,
+            4000,
+            -100.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0001",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0001"
+        ],
+        "shape_id": "259f9ae1-f89f-4113-96e2-b9934c5c7c11",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0003": {
+        "id": "feat-0003",
+        "name": "01 / Infeed",
+        "operation": "create_box",
+        "parameters": {
+          "length": 2200.0,
+          "width": 800.0,
+          "height": 300.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "a8d28ad6-ac6b-4582-904b-ac48894e3a07",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0004": {
+        "id": "feat-0004",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0003",
+          "offset": [
+            1300.0,
+            4000,
+            850.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0003",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0003"
+        ],
+        "shape_id": "435c053d-3960-4137-9db3-3e399541f669",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0005": {
+        "id": "feat-0005",
+        "name": "02 / Inspection conveyor",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1600.0,
+          "width": 800.0,
+          "height": 300.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "3c2eba0c-6047-49fc-a63e-50961acf810c",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0006": {
+        "id": "feat-0006",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0005",
+          "offset": [
+            3200.0,
+            4000,
+            850.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0005",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0005"
+        ],
+        "shape_id": "95ed2d53-0d5d-4f90-8207-ae910d20b229",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0007": {
+        "id": "feat-0007",
+        "name": "Vision head",
+        "operation": "create_box",
+        "parameters": {
+          "length": 800.0,
+          "width": 700.0,
+          "height": 500.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "c96afe7b-26ea-4831-8757-68e8a178cb60",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0008": {
+        "id": "feat-0008",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0007",
+          "offset": [
+            3200.0,
+            4000,
+            1650.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0007",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0007"
+        ],
+        "shape_id": "63752f5e-aac0-40c3-9412-d3be9d25168f",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0009": {
+        "id": "feat-0009",
+        "name": "03 / Reject gate",
+        "operation": "create_box",
+        "parameters": {
+          "length": 800.0,
+          "width": 800.0,
+          "height": 300.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "ce04db36-faf2-4a93-a7de-525d6c43f3ae",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0010": {
+        "id": "feat-0010",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0009",
+          "offset": [
+            4400.0,
+            4000,
+            850.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0009",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0009"
+        ],
+        "shape_id": "e7476810-237e-4a51-b485-f42b7ca3ecc4",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0011": {
+        "id": "feat-0011",
+        "name": "Reject / quarantine buffer",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1200.0,
+          "width": 1200.0,
+          "height": 900.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "3e4846d8-ef44-41fd-ba7e-04d52638549d",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0012": {
+        "id": "feat-0012",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0011",
+          "offset": [
+            4400.0,
+            5100.0,
+            450.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0011",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0011"
+        ],
+        "shape_id": "6f317631-6884-4d0c-b932-cde1870b7a6a",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0013": {
+        "id": "feat-0013",
+        "name": "04 / Accumulate accepted cans",
+        "operation": "create_box",
+        "parameters": {
+          "length": 2600.0,
+          "width": 1200.0,
+          "height": 300.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "26d6da42-4ddd-4f6f-b307-9987bf33b1bb",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0014": {
+        "id": "feat-0014",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0013",
+          "offset": [
+            6100.0,
+            4000,
+            850.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0013",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0013"
+        ],
+        "shape_id": "c26fcc5a-b083-4664-a123-f9acd9c51c49",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0015": {
+        "id": "feat-0015",
+        "name": "05 / Pallet build position",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1200.0,
+          "width": 1200.0,
+          "height": 400.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "13c4884b-189c-4f65-aed8-9ab384a2c207",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0016": {
+        "id": "feat-0016",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0015",
+          "offset": [
+            8600.0,
+            4000,
+            200.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0015",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0015"
+        ],
+        "shape_id": "391b1346-9ae0-4659-9f62-eb4a941a3c8f",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0017": {
+        "id": "feat-0017",
+        "name": "06 / Finished pallet outfeed",
+        "operation": "create_box",
+        "parameters": {
+          "length": 2400.0,
+          "width": 1400.0,
+          "height": 500.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "66419009-3564-4de7-965c-b95624de43c0",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0018": {
+        "id": "feat-0018",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0017",
+          "offset": [
+            10600.0,
+            4000,
+            250.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0017",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0017"
+        ],
+        "shape_id": "4a772eea-6f5a-4216-b9b9-4d7aadb4c8da",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0019": {
+        "id": "feat-0019",
+        "name": "Empty pallets and layer sheets",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1800.0,
+          "width": 1600.0,
+          "height": 1400.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "1ac65fda-2127-428e-87b0-bcbb17f3489e",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0020": {
+        "id": "feat-0020",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0019",
+          "offset": [
+            9000,
+            6100.0,
+            700.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0019",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0019"
+        ],
+        "shape_id": "ac39dd33-7b03-4843-8592-ec290e7695b2",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0021": {
+        "id": "feat-0021",
+        "name": "Supervisory console",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1100.0,
+          "width": 650.0,
+          "height": 1200.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "9903c0c9-93dc-46a3-9224-1b09f8792010",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0022": {
+        "id": "feat-0022",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0021",
+          "offset": [
+            1400.0,
+            1800.0,
+            600.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0021",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0021"
+        ],
+        "shape_id": "40a6f05f-d4c2-4f2b-9b34-482b982aab39",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0023": {
+        "id": "feat-0023",
+        "name": "Layer palletizer column A",
+        "operation": "create_box",
+        "parameters": {
+          "length": 300.0,
+          "width": 300.0,
+          "height": 2600.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "85a91da7-3988-40c6-a7f7-6ecd91fad3ed",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0024": {
+        "id": "feat-0024",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0023",
+          "offset": [
+            7800.0,
+            2800.0,
+            1300.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0023",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0023"
+        ],
+        "shape_id": "0bc74f7d-2bb1-45c7-a021-2906ac2f4789",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0025": {
+        "id": "feat-0025",
+        "name": "Layer palletizer column B",
+        "operation": "create_box",
+        "parameters": {
+          "length": 300.0,
+          "width": 300.0,
+          "height": 2600.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "8f7c4ef3-9c5e-4bc6-916d-75621db72dc9",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0026": {
+        "id": "feat-0026",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0025",
+          "offset": [
+            9400.0,
+            5200.0,
+            1300.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0025",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0025"
+        ],
+        "shape_id": "c8e5b74e-412c-437b-b376-09622fa1f9e5",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0027": {
+        "id": "feat-0027",
+        "name": "Layer-transfer bridge",
+        "operation": "create_box",
+        "parameters": {
+          "length": 2300.0,
+          "width": 2800.0,
+          "height": 250.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "8a5ef4b1-cb63-445e-b714-14b3b72675e9",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0028": {
+        "id": "feat-0028",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0027",
+          "offset": [
+            8600.0,
+            4000,
+            2700.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0027",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0027"
+        ],
+        "shape_id": "c43f3c0b-47bb-4c37-848a-fa44bb6c3456",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0029": {
+        "id": "feat-0029",
+        "name": "Layer gripper",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1100.0,
+          "width": 1100.0,
+          "height": 250.0
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "d436aa62-3d03-45a5-92da-f68e31f55e98",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0030": {
+        "id": "feat-0030",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0029",
+          "offset": [
+            8200.0,
+            4000,
+            2200.0
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0029",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0029"
+        ],
+        "shape_id": "2c1c2e8d-f861-4158-8b6f-cbe9bf1007b1",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0031": {
+        "id": "feat-0031",
+        "name": "Automatic layer-sheet feed",
+        "operation": "create_box",
+        "parameters": {
+          "length": 1500.0,
+          "width": 1500.0,
+          "height": 2000
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "5c42f636-347b-4c36-9d2d-c9da78aef0f4",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0032": {
+        "id": "feat-0032",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0031",
+          "offset": [
+            7000,
+            6100.0,
+            1000
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0031",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0031"
+        ],
+        "shape_id": "a7fbf3ed-a3ff-4182-af98-fe2d199cbe53",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0033": {
+        "id": "feat-0033",
+        "name": "Cell separation",
+        "operation": "create_box",
+        "parameters": {
+          "length": 4200.0,
+          "width": 80.0,
+          "height": 2000
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": null,
+        "tool_refs": [],
+        "depends_on": [],
+        "shape_id": "0d8279b9-3f57-4ae9-88a4-7f48990fe1a5",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      },
+      "feat-0034": {
+        "id": "feat-0034",
+        "name": "Translate",
+        "operation": "translate",
+        "parameters": {
+          "shape_id": "feat-0033",
+          "offset": [
+            8300.0,
+            2400.0,
+            1000
+          ]
+        },
+        "typed_parameters": {},
+        "parameter_bindings": [],
+        "sketch_id": null,
+        "parent_id": "feat-0033",
+        "tool_refs": [],
+        "depends_on": [
+          "feat-0033"
+        ],
+        "shape_id": "16412657-f512-46bb-911f-d35b1f901aca",
+        "status": "built",
+        "replay_shape_id": null,
+        "rebuild_error": null,
+        "suppressed": false,
+        "mate_id": null,
+        "is_assembly_mate": false
+      }
+    }
+  },
+  "solver_cache": {},
+  "revision": 34,
+  "kernel_session_id": "f981cd0c-4b98-4c09-b24d-9a1199bbac88"
+}

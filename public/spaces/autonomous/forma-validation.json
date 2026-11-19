@@ -1,0 +1,9 @@
+{
+  "local": {
+    "autonomous.mechanical": [],
+    "autonomous.process": []
+  },
+  "composition": [],
+  "blocked_domains": {},
+  "is_valid": true
+}

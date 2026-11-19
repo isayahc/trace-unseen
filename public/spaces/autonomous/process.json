@@ -1,0 +1,273 @@
+{
+  "artifact_id": "autonomous.process",
+  "revision": 1,
+  "domain": "process",
+  "schema_version": "1.0",
+  "operations": [
+    {
+      "operation_id": "infeed",
+      "operation_type": "infeed",
+      "description": "infeed / autonomous",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "inspection",
+      "operation_type": "inspection",
+      "description": "Vision inspection flags visible defects; no measured accuracy.",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "reject",
+      "operation_type": "reject",
+      "description": "reject / autonomous",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "quarantine",
+      "operation_type": "quarantine",
+      "description": "Automatic containment; asynchronous review outside normal flow.",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "accumulation",
+      "operation_type": "accumulation",
+      "description": "accumulation / autonomous",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "palletizing",
+      "operation_type": "palletizing",
+      "description": "Gantry places layers and automatic feeder places separators.",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    },
+    {
+      "operation_id": "outfeed",
+      "operation_type": "outfeed",
+      "description": "Automatic pallet transfer.",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Host-authored process topology, not observed operation."
+      },
+      "ports": [
+        {
+          "port_id": "in",
+          "direction": "in",
+          "kind": "material",
+          "phase": "solid"
+        },
+        {
+          "port_id": "out",
+          "direction": "out",
+          "kind": "material",
+          "phase": "solid"
+        }
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "stream_id": "infeed-inspection",
+      "source": {
+        "operation_id": "infeed",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "inspection",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    },
+    {
+      "stream_id": "inspection-reject",
+      "source": {
+        "operation_id": "inspection",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "reject",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    },
+    {
+      "stream_id": "reject-quarantine",
+      "source": {
+        "operation_id": "reject",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "quarantine",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    },
+    {
+      "stream_id": "reject-accumulation",
+      "source": {
+        "operation_id": "reject",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "accumulation",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    },
+    {
+      "stream_id": "accumulation-palletizing",
+      "source": {
+        "operation_id": "accumulation",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "palletizing",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    },
+    {
+      "stream_id": "palletizing-outfeed",
+      "source": {
+        "operation_id": "palletizing",
+        "port_id": "out"
+      },
+      "target": {
+        "operation_id": "outfeed",
+        "port_id": "in"
+      },
+      "kind": "material",
+      "phase": "solid",
+      "claim": {
+        "basis": "assumed",
+        "rationale": "Topology only; rate unknown."
+      }
+    }
+  ]
+}

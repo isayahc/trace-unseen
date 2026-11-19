@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug saved journey — offline replay",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node",
+      "windows": { "runtimeExecutable": "${workspaceFolder}/node_modules/node/bin/node.exe" },
+      "runtimeArgs": ["--import", "tsx"],
+      "program": "${workspaceFolder}/src/jobs/debug-journey.ts",
+      "args": ["${input:replayRun}"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**", "**/node_modules/**"]
+    },
+    {
       "name": "Debug product graph — Nike fleece hoodie",
       "type": "node",
       "request": "launch",
@@ -38,5 +52,9 @@
         "--process", "injection molding"
       ]
     }
-  ]
+  ],
+  "inputs": [{
+    "id": "replayRun", "type": "promptString", "description": "Saved run directory to replay (read-only)",
+    "default": "data/runs/2026-11-19T19-58-27-161Z-e2db9139"
+  }]
 }

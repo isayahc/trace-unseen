@@ -1,10 +1,10 @@
 import { spawn } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { mkdirSync, writeFileSync, readFileSync, existsSync, renameSync } from "node:fs";
-import { resolve, join } from "node:path";
+import { resolve, join, basename } from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
 
-type Job = { id: string; product: string; status: "running" | "completed" | "failed"; stage: string; createdAt: string; finishedAt?: string };
+type Job = { id: string; product: string; status: "running" | "completed" | "failed"; stage: string; createdAt: string; finishedAt?: string; runId?: string };
 let active: Job | undefined;
 const running = () => active?.status === "running";
 const directory = resolve("data/jobs");
@@ -53,6 +53,7 @@ export async function researchJobs(request: IncomingMessage, response: ServerRes
       buffer += String(chunk);
       const lines = buffer.split(/\r?\n/); buffer = lines.pop() ?? "";
       for (const line of lines) {
+        if (line.startsWith("Run directory: ")) job.runId = basename(line.slice("Run directory: ".length).trim());
         if (line.startsWith("Tavily search")) job.stage = line;
         if (line.startsWith("Tavily extracting")) job.stage = line;
         if (line.startsWith("Saved journey:")) job.stage = "Saving validated journey";
@@ -62,8 +63,19 @@ export async function researchJobs(request: IncomingMessage, response: ServerRes
     // Keep credentials and provider responses out of browser-visible progress.
     child.stderr.on("data", () => {});
     const finish = (ok: boolean) => {
+      if (job.status !== "running") return;
       job.status = ok ? "completed" : "failed";
       job.stage = ok ? "Journey saved" : "Research failed. Check the latest data/runs manifest for details.";
+      if (!ok && job.runId) {
+        job.stage = `Research failed. Inspect data/runs/${job.runId}/manifest.json`;
+        try {
+          const manifest = JSON.parse(readFileSync(join("data/runs", job.runId, "manifest.json"), "utf8"));
+          // Only expose known local validation messages, never raw provider stderr.
+          if (typeof manifest.error === "string" && /^(Automation task must belong to|Journey quote not found in|Metric output basis must reference)/.test(manifest.error)) {
+            job.stage = `Validation failed: ${manifest.error}`;
+          }
+        } catch { /* Run may have exited before writing its manifest. */ }
+      }
       job.finishedAt = new Date().toISOString(); save(job);
     };
     child.on("error", () => finish(false));

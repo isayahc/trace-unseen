@@ -47,7 +47,8 @@ async function main() {
     ? sourceSchema.array().min(1).parse(JSON.parse(await readFile(resolve(values.sources), "utf8"))) : [];
   if (values.sources) await saveJson(join(runDirectory, "sources.json"), sources);
   const manifest = {
-    id, sector: values.sector, naics: values.naics, process: values.process, product: values.product,
+    id, sector: isJourney ? null : values.sector, naics: isJourney ? null : values.naics,
+    process: isJourney ? null : values.process, product: values.product,
     agent: values.agent, created_at: new Date().toISOString(), extraction_version: 2,
     status: "running", opencode_session_id: "", task_count: 0, source_count: 0,
     reused_sources: values.sources ?? null, error: "",
@@ -69,7 +70,7 @@ async function main() {
     if (!selectedModel) throw new Error("No model available; connect a provider or set OPENCODE_MODEL");
     const session = await host.sessions.create({
       location: { directory: root }, agent: values.agent,
-      title: `Trace Unseen: ${values.process}`,
+      title: `Trace Unseen: ${isJourney ? values.product : values.process}`,
       model: selectedModel,
     });
     sessionID = session.id;
@@ -113,6 +114,7 @@ ${values.sources ? `Use ONLY these supplied extracted sources; do not call Tavil
     if (host && sessionID) await host.sessions.interrupt({ sessionID, resume: false }).catch(() => {});
     throw error;
   } finally {
+    manifest.source_count = sources.length;
     await saveJson(join(runDirectory, "manifest.json"), manifest);
     await host?.close();
   }

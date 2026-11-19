@@ -1,0 +1,378 @@
+{
+  "schema": "trace-unseen.concept-space.v1",
+  "scenario": "human",
+  "forma_project_id": "3626872a-3a8f-46d0-be4b-c4dcf1ee83fa",
+  "title": "Human-in-the-loop cell",
+  "dimensions_m": [
+    12,
+    8,
+    3
+  ],
+  "objects": [
+    {
+      "id": "floor",
+      "label": "96 m² comparison footprint",
+      "center_m": [
+        6,
+        4,
+        -0.1
+      ],
+      "size_m": [
+        12,
+        8,
+        0.2
+      ],
+      "category": "structure",
+      "description": "Assumed identical room; walls omitted for inspection.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "infeed",
+      "label": "01 / Infeed",
+      "center_m": [
+        1.3,
+        4,
+        0.85
+      ],
+      "size_m": [
+        2.2,
+        0.8,
+        0.3
+      ],
+      "category": "conveyor",
+      "description": "Empty formed cans enter from the west. Same boundary in both scenarios.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "inspection-belt",
+      "label": "02 / Inspection conveyor",
+      "center_m": [
+        3.2,
+        4,
+        0.85
+      ],
+      "size_m": [
+        1.6,
+        0.8,
+        0.3
+      ],
+      "category": "conveyor",
+      "description": "Conveyor under the inspection head; integrated equipment envelope.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "camera",
+      "label": "Vision head",
+      "center_m": [
+        3.2,
+        4,
+        1.65
+      ],
+      "size_m": [
+        0.8,
+        0.7,
+        0.5
+      ],
+      "category": "sensor",
+      "description": "Commercial vision capability is evidenced. Camera arrangement and footprint are assumptions.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "reject",
+      "label": "03 / Reject gate",
+      "center_m": [
+        4.4,
+        4,
+        0.85
+      ],
+      "size_m": [
+        0.8,
+        0.8,
+        0.3
+      ],
+      "category": "sensor",
+      "description": "Automatically divert flagged cans; no claimed accuracy or reject timing.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "quarantine",
+      "label": "Reject / quarantine buffer",
+      "center_m": [
+        4.4,
+        5.1,
+        0.45
+      ],
+      "size_m": [
+        1.2,
+        1.2,
+        0.9
+      ],
+      "category": "reject",
+      "description": "No automatic release of ambiguous cans. Full buffer causes a controlled stop.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "accumulator",
+      "label": "04 / Accumulate accepted cans",
+      "center_m": [
+        6.1,
+        4,
+        0.85
+      ],
+      "size_m": [
+        2.6,
+        1.2,
+        0.3
+      ],
+      "category": "conveyor",
+      "description": "Decouple inspection from layer formation. Capacity and dwell time unverified.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "pallet",
+      "label": "05 / Pallet build position",
+      "center_m": [
+        8.6,
+        4,
+        0.2
+      ],
+      "size_m": [
+        1.2,
+        1.2,
+        0.4
+      ],
+      "category": "pallet",
+      "description": "Plastic pallet plus separator layers; schematic dimensions only.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "outfeed",
+      "label": "06 / Finished pallet outfeed",
+      "center_m": [
+        10.6,
+        4,
+        0.25
+      ],
+      "size_m": [
+        2.4,
+        1.4,
+        0.5
+      ],
+      "category": "conveyor",
+      "description": "Same eastern output boundary; downstream wrapping and truck loading excluded.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "supplies",
+      "label": "Empty pallets and layer sheets",
+      "center_m": [
+        9,
+        6.1,
+        0.7
+      ],
+      "size_m": [
+        1.8,
+        1.6,
+        1.4
+      ],
+      "category": "storage",
+      "description": "Consumable inventory; replenishment remains an external task in both concepts.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "console",
+      "label": "Supervisory console",
+      "center_m": [
+        1.4,
+        1.8,
+        0.6
+      ],
+      "size_m": [
+        1.1,
+        0.65,
+        1.2
+      ],
+      "category": "sensor",
+      "description": "Batch recipe, quality trend and stop-state display; no production control software connected.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "review-desk",
+      "label": "Human exception review",
+      "center_m": [
+        3.0,
+        6.1,
+        0.45
+      ],
+      "size_m": [
+        1.6,
+        0.8,
+        0.9
+      ],
+      "category": "manual",
+      "description": "Operator reviews reject samples, quality trends and uncertain results.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "layer-assist",
+      "label": "Assisted layer-transfer table",
+      "center_m": [
+        7.5,
+        4,
+        0.85
+      ],
+      "size_m": [
+        0.8,
+        1.3,
+        0.3
+      ],
+      "category": "manual",
+      "description": "Mechanized accumulation and assisted transfer; operator initiates layer/pallet change.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "worker-qc",
+      "label": "Operator A / Quality",
+      "center_m": [
+        2.8,
+        5.2,
+        0.9
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        1.8
+      ],
+      "category": "human",
+      "description": "One assumed quality/exception role; no labor utilization measurement.",
+      "basis": "authored concept envelope; not vendor CAD"
+    },
+    {
+      "id": "worker-pack",
+      "label": "Operator B / Packing",
+      "center_m": [
+        8,
+        2.5,
+        0.9
+      ],
+      "size_m": [
+        0.5,
+        0.5,
+        1.8
+      ],
+      "category": "human",
+      "description": "One assumed pallet/layer handling role; duty cycle and ergonomics unmeasured.",
+      "basis": "authored concept envelope; not vendor CAD"
+    }
+  ],
+  "tasks": [
+    {
+      "task": "Inspect and flag visible defects",
+      "owner": "Vision system",
+      "status": "documented technology; proposed integration"
+    },
+    {
+      "task": "Review ambiguous inspection results",
+      "owner": "Operator A",
+      "status": "design assumption"
+    },
+    {
+      "task": "Transfer layers and place separators",
+      "owner": "Operator B with transfer assistance",
+      "status": "representative staffing assumption"
+    },
+    {
+      "task": "Exchange and discharge pallets",
+      "owner": "Operator B with handling equipment",
+      "status": "design assumption"
+    },
+    {
+      "task": "Clear jams, maintain and replenish",
+      "owner": "External service personnel; stopped equipment",
+      "status": "retained human task"
+    }
+  ],
+  "target_cans_per_minute": 60,
+  "target_status": "assumed comparison requirement; feasibility unverified",
+  "routine_onsite_roles": 2,
+  "staffing_status": "design allocation, not measured staffing or total labor savings",
+  "floor_area_m2": 96,
+  "labor_minutes_per_1000": null,
+  "energy_kwh_per_1000": null,
+  "capex_usd": null,
+  "payback_months": null,
+  "aisle": {
+    "x": 0,
+    "y": 0,
+    "width": 12,
+    "depth": 1.2,
+    "basis": "reserved circulation band; no code-compliance assertion"
+  },
+  "flow": [
+    [
+      0.2,
+      4
+    ],
+    [
+      3.2,
+      4
+    ],
+    [
+      4.4,
+      4
+    ],
+    [
+      6.1,
+      4
+    ],
+    [
+      8.6,
+      4
+    ],
+    [
+      11.8,
+      4
+    ]
+  ],
+  "exceptions": [
+    "Reject buffer full → stop infeed",
+    "Vision unavailable → stop/divert all; never bypass quality checks",
+    "Downstream blocked → accumulate then stop",
+    "Mechanical fault → stop and request service"
+  ],
+  "sources": [
+    {
+      "id": "AA-LCA",
+      "url": "https://www.aluminum.org/sites/default/files/2021-10/2021AluminumCanLCAReportFullVersion.pdf",
+      "title": "Aluminum Association 2021 Can LCA, section 3.2.3",
+      "quote": "The cans then undergo a quality control process to check the integrity of the final product before they are shipped to fillers.",
+      "scope": "Quality control followed by palletized shipment; does not specify this floor plan or staffing."
+    },
+    {
+      "id": "AA-PALLETS",
+      "url": "https://www.aluminum.org/sites/default/files/2021-10/2021AluminumCanLCAReportFullVersion.pdf",
+      "title": "Aluminum Association 2021 Can LCA, section 3.2.3",
+      "quote": "The cans are stacked onto plastic pallets for shipping. Layers of cans are separated using corrugated paper or plastic sheets.",
+      "scope": "Empty-can palletization; manual/robot task allocation below is authored, not observed."
+    },
+    {
+      "id": "FILTEC",
+      "url": "https://www.filtec.com/products/empty-can/vision-empty-can-inspection/",
+      "title": "FILTEC Empty Can Inspection",
+      "quote": "The FILTEC Empty Can Inspection (ECI) Solution is a highly configurable system that uses Vision technology to detect defects in empty cans on lines running up to 2,400 cans per minute (CPM).",
+      "scope": "Vendor capability before filling; proposed adaptation to manufacturing end-of-line, not a verified integrated cell or throughput."
+    }
+  ],
+  "limitations": [
+    "Representative baseline, not a surveyed factory",
+    "Autonomous means no routine in-cell intervention during normal operation, not zero humans over the lifecycle",
+    "All geometry is conceptual and all equipment footprints are assumed",
+    "No dynamic robot collision, cycle-time, structural, safety or throughput qualification",
+    "No SpaceIR provider used: OpenForma MechanicalIR and ProcessIR own these authored artifacts",
+    "109 MJ per 1000 cans belongs to whole can manufacturing and is NOT assigned to this cell"
+  ],
+  "generation": {
+    "method": "host-authored native Forma IR plus Forma-managed OpenCAD/OCCT export",
+    "hosted_request": "failed without job ID; not retried or claimed successful"
+  }
+}

@@ -31,6 +31,11 @@ test("process metrics verify source passages and persist with their unit basis a
       output_basis: basis, metrics: [metric], automation: [], ...claim }],
   };
   const journey = validateJourney(input, sources);
+  const assessment = { task: "Spin yarn", technical_feasibility: "unknown", economic_viability: "unknown",
+    output_basis: basis, rationale: "Insufficient evidence", constraints: [], evidence: [] };
+  assert.equal(validateJourney({ ...input, stages: [{ ...input.stages[0], automation: [assessment] }] }, sources).stages[0].automation?.[0].task, "Spin yarn");
+  assert.throws(() => validateJourney({ ...input, stages: [{ ...input.stages[0], automation: [{ ...assessment, task: "Automatic yarn spinning" }] }] }, sources),
+    /Automation task must belong to spin: automation\[0\].task="Automatic yarn spinning"; expected an exact entry from tasks=\["Spin yarn"\]/);
   assert.throws(() => validateJourney({ ...input, stages: [{ ...input.stages[0], metrics: [{ ...metric, evidence: [{ source_id: "S1", quote: "Fabricated quantitative claim about energy." }] }] }] }, sources), /quote not found/);
   assert.throws(() => validateJourney({ ...input, stages: [{ ...input.stages[0], metrics: [{ ...metric, output_basis: { ...basis, material_id: "fiber" } }] }] }, sources), /output basis/);
   const directory = mkdtempSync(join(tmpdir(), "trace-metrics-"));

@@ -31,6 +31,11 @@ Keep energy, materials and waste quantities separate from prices. Resource cost 
 not total manufacturing cost. Do not double count scrap purchase cost or intermediate
 materials already included upstream. Never sum incompatible process units.
 Assess automation for a named task in that process, distinguishing technical feasibility
+and economic viability. automation[].task MUST copy one entire string from that
+same stage's tasks array EXACTLY, including spelling and punctuation. Do not paraphrase
+it or combine multiple tasks; describe the proposed technology in rationale instead.
+Before returning JSON, check every automation task against its parent tasks array.
+Distinguish technical feasibility
 from economic viability. Require evidence for conclusions, list constraints, and use
 unknown where evidence is insufficient. Baseline and proposed metrics can only be
 compared with matching output specifications, units, geography and production conditions.

@@ -1,0 +1,65 @@
+{
+  "status": "failed",
+  "error": "inspection unavailable: stopped before quality bypass",
+  "engine": "MuJoCo",
+  "version": "3.17.0",
+  "fault": "inspection-unavailable",
+  "simulated_seconds": 7.779999999999365,
+  "physics_steps": 3890,
+  "warning_count": 0,
+  "model_sha256": "af8f297bc55aaab0052da3d812812d9ad63d7173f7a4b4d035d741d566084eba",
+  "events": [
+    {
+      "time_s": 0.8,
+      "state": "infeed",
+      "can": 0
+    },
+    {
+      "time_s": 7.78,
+      "state": "inspection",
+      "can": 0,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 7.78,
+      "state": "stopped",
+      "reason": "inspection unavailable: stopped before quality bypass"
+    }
+  ],
+  "final_positions": {
+    "can0": [
+      3.1999801387209015,
+      3.999997672962679,
+      1.0579900335477435
+    ],
+    "can1": [
+      1.1499999999974155,
+      3.000000000044128,
+      0.057986886423364054
+    ],
+    "can2": [
+      1.2999999999684733,
+      3.0000000000319558,
+      0.057986886423364074
+    ],
+    "can3": [
+      1.4499999999684732,
+      3.0000000000319558,
+      0.057986886423364074
+    ],
+    "can4": [
+      1.6000000000360828,
+      2.999999999973372,
+      0.05798688642336407
+    ]
+  },
+  "assumptions": [
+    "Scripted classification: can 2 is defective; no vision model.",
+    "Ideal vacuum weld with proximity and support interlocks; no suction physics.",
+    "Serial single-can transfer, not the proposed full-layer palletizer.",
+    "Carrier shuttle substitutes for continuous belt/reject gate.",
+    "Rigid cans; no crushing, air drag, jam clearing, separator dispensing or replenishment.",
+    "5x replay; 60 cans/minute is not validated.",
+    "Forma envelopes are visual-only; carrier, pallet, quarantine and cans have collision geometry."
+  ]
+}

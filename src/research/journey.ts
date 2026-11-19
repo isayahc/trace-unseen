@@ -54,7 +54,11 @@ export function validateJourney(value: unknown, sources: Source[]): Journey {
     ids(stage.metrics ?? []);
     const bases = [stage.output_basis, ...(stage.metrics ?? []).map((m) => m.output_basis), ...(stage.automation ?? []).map((a) => a.output_basis)];
     for (const basis of bases) if (basis && !stage.outputs.includes(basis.material_id)) throw new Error(`Metric output basis must reference an output of ${stage.id}`);
-    for (const assessment of stage.automation ?? []) if (!stage.tasks.includes(assessment.task)) throw new Error(`Automation task must belong to ${stage.id}`);
+    for (const [index, assessment] of (stage.automation ?? []).entries()) {
+      if (!stage.tasks.includes(assessment.task)) {
+        throw new Error(`Automation task must belong to ${stage.id}: automation[${index}].task=${JSON.stringify(assessment.task)}; expected an exact entry from tasks=${JSON.stringify(stage.tasks)}`);
+      }
+    }
   }
   for (const place of journey.places) requireIDs(place.stage_ids, stages);
   for (const dependency of journey.dependencies ?? []) {
@@ -76,7 +80,8 @@ export function validateJourney(value: unknown, sources: Source[]): Journey {
     for (const citation of item.evidence) {
       const source = sources.find((s) => s.id === citation.source_id);
       if (!source || !normalize(source.content).includes(normalize(citation.quote))) {
-        throw new Error(`Journey quote not found in ${citation.source_id}`);
+        const owner = "id" in item ? item.id : item.task;
+        throw new Error(`Journey quote not found in ${citation.source_id} for ${owner}: ${JSON.stringify(citation.quote)}`);
       }
     }
   }

@@ -1,0 +1,5 @@
+{
+  "floor_bounds": "pass",
+  "reserved_aisle": "pass",
+  "scope": "Authored static box envelopes only; no dynamic/collision qualification"
+}

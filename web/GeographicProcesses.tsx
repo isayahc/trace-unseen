@@ -5,6 +5,8 @@ import { ProcessDetails, type Sources } from "./ProcessDetails.js";
 
 // Display anchors only, not factory coordinates or evidence of a real trade lane.
 const anchors: Record<string, [number, number]> = {
+  "Saudi Arabia": [24, 45], "United Kingdom": [54, -2], Canada: [56, -106],
+  Australia: [-25, 134], "New Zealand": [-41, 174],
   "United States": [39, -98], China: [35, 105], "Middle East": [28, 45], Brazil: [-14, -52],
   Vietnam: [16, 107], Bangladesh: [24, 90], "Southeast Asia": [8, 110], "South Asia": [23, 78],
   Turkey: [39, 35], Istanbul: [41.01, 28.98], India: [22, 79], Indonesia: [-2, 118],

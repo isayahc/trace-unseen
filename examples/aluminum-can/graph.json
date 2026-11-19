@@ -1,0 +1,1348 @@
+{
+  "schemaVersion": 2,
+  "runId": "demo-aluminum-can-v1",
+  "product": "Aluminum beverage can — primary vs recycled",
+  "scope": "Reviewed hackathon benchmark snapshot. Seven processes and two feedstock branches, with per-process output units. Geographic route is illustrative; metric geographies/years remain separate. The LCA uses average North American cans, not a fixed 330/355 ml SKU. Route energy comparison and 60-day circularity story are in highlights.json.",
+  "nodes": [
+    {
+      "id": "process:mining",
+      "kind": "process",
+      "label": "Bauxite mining",
+      "basis": "documented",
+      "rationale": "Documented Saudi mine example, not a claim that its output reaches the other demo locations.",
+      "evidence": [
+        {
+          "source_id": "S4",
+          "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "ore_deposit",
+            "name": "Bauxite-bearing deposit",
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "bauxite",
+            "name": "Bauxite ore",
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "saudi",
+            "name": "Al Ba’itha / Ras Al Khair, Saudi Arabia",
+            "country_or_region": "Saudi Arabia",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "mining",
+              "refining",
+              "smelting"
+            ],
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "2014 integrated mine/refinery/smelter example. No shipment to North American rolling is claimed."
+          }
+        ],
+        "tasks": [
+          "extract bauxite ore"
+        ],
+        "outputBasis": {
+          "material_id": "bauxite",
+          "quantity": 1,
+          "unit": "tonne",
+          "specification": "Bauxite ore; grade unspecified"
+        },
+        "metrics": [],
+        "automation": [
+          {
+            "task": "extract bauxite ore",
+            "technical_feasibility": "unknown",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "bauxite",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Bauxite ore; grade unspecified"
+            },
+            "rationale": "No reviewed task-specific automation conclusion for this process in the demo pack.",
+            "constraints": [
+              "Further task-level evidence required"
+            ],
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:refining",
+      "kind": "process",
+      "label": "Alumina refining",
+      "basis": "documented",
+      "rationale": "Bayer-process benchmark; coproduct/residue quantities are retained in metrics.",
+      "evidence": [
+        {
+          "source_id": "C8",
+          "quote": "After the bauxite is mined, it is refined into alumina before it is ready to be reduced to primary aluminium."
+        },
+        {
+          "source_id": "C8",
+          "quote": "Clarification separates the bauxite residue from the pregnant liquor via sedimentation."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "bauxite",
+            "name": "Bauxite ore",
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "alumina",
+            "name": "Smelter-grade alumina",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "After the bauxite is mined, it is refined into alumina before it is ready to be reduced to primary aluminium."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "saudi",
+            "name": "Al Ba’itha / Ras Al Khair, Saudi Arabia",
+            "country_or_region": "Saudi Arabia",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "mining",
+              "refining",
+              "smelting"
+            ],
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "2014 integrated mine/refinery/smelter example. No shipment to North American rolling is claimed."
+          }
+        ],
+        "tasks": [
+          "digest bauxite in caustic liquor",
+          "separate bauxite residue",
+          "precipitate and calcine alumina"
+        ],
+        "outputBasis": {
+          "material_id": "alumina",
+          "quantity": 1,
+          "unit": "tonne",
+          "specification": "Smelter-grade alumina"
+        },
+        "metrics": [
+          {
+            "id": "bauxite-input",
+            "category": "material_consumption",
+            "name": "Bauxite feed",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": null,
+            "range": {
+              "low": 2,
+              "high": 3
+            },
+            "unit": "tonne bauxite",
+            "output_basis": {
+              "material_id": "alumina",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Smelter-grade alumina"
+            },
+            "currency": null,
+            "location": null,
+            "source_period": null,
+            "technology": "Alumina refining",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "Two to three tonnes of bauxite are required to produce one tonne of alumina"
+              }
+            ]
+          },
+          {
+            "id": "red-mud",
+            "category": "waste",
+            "name": "Bauxite residue",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": null,
+            "range": {
+              "low": 1,
+              "high": 1.5
+            },
+            "unit": "tonne residue",
+            "output_basis": {
+              "material_id": "alumina",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Smelter-grade alumina"
+            },
+            "currency": null,
+            "location": null,
+            "source_period": null,
+            "technology": "Alumina refining",
+            "assumptions": [
+              "Moisture basis unspecified; generation is not equivalent to landfilled waste."
+            ],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "C3",
+                "quote": "For every 1 tonne of alumina, 1–1.5 tonnes of bauxite residue is produced."
+              }
+            ]
+          },
+          {
+            "id": "bauxite-cost-proxy",
+            "category": "resource_cost",
+            "name": "Illustrative bauxite purchase cost ONLY",
+            "scenario": "baseline",
+            "status": "estimate",
+            "value": null,
+            "range": {
+              "low": 62,
+              "high": 93
+            },
+            "unit": "USD",
+            "output_basis": {
+              "material_id": "alumina",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Smelter-grade alumina"
+            },
+            "currency": "USD",
+            "location": "U.S. import-price scenario; not Saudi plant costs",
+            "source_period": "January–August 2025 price proxy",
+            "technology": "Alumina refining",
+            "assumptions": [
+              "2–3 tonnes bauxite per tonne alumina × 31 USD/metric tonne",
+              "Assumes source ore requirement is compatible with the dry-bauxite price basis; grade and moisture differences are not modeled.",
+              "Excludes freight beyond f.a.s. boundary, energy, chemicals, labor, capital, waste and recovery revenue."
+            ],
+            "rationale": "Calculated input-cost scenario, not total resource cost or a supplier quote.",
+            "evidence": [
+              {
+                "source_id": "S7",
+                "quote": "The average prices, f.a.s., for U.S. imports for consumption of crude dry bauxite and metallurgical-grade alumina during the first 8 months of 2025 were $31 per ton and $595 per ton, respectively"
+              },
+              {
+                "source_id": "C8",
+                "quote": "Two to three tonnes of bauxite are required to produce one tonne of alumina"
+              }
+            ]
+          }
+        ],
+        "automation": [
+          {
+            "task": "digest bauxite in caustic liquor",
+            "technical_feasibility": "unknown",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "alumina",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Smelter-grade alumina"
+            },
+            "rationale": "No reviewed task-specific automation conclusion for this process in the demo pack.",
+            "constraints": [
+              "Further task-level evidence required"
+            ],
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:smelting",
+      "kind": "process",
+      "label": "Primary aluminum smelting",
+      "basis": "documented",
+      "rationale": "Hall–Héroult reduction; route-level primary energy is stored separately in highlights.json.",
+      "evidence": [
+        {
+          "source_id": "C8",
+          "quote": "At the smelter, the alumina – now a powder – goes through the Hall–Héroult electrochemical process to convert it into aluminium metal."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "alumina",
+            "name": "Smelter-grade alumina",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "After the bauxite is mined, it is refined into alumina before it is ready to be reduced to primary aluminium."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "primary",
+            "name": "Primary aluminum",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "At the smelter, the alumina – now a powder – goes through the Hall–Héroult electrochemical process to convert it into aluminium metal."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "saudi",
+            "name": "Al Ba’itha / Ras Al Khair, Saudi Arabia",
+            "country_or_region": "Saudi Arabia",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "mining",
+              "refining",
+              "smelting"
+            ],
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "2014 integrated mine/refinery/smelter example. No shipment to North American rolling is claimed."
+          }
+        ],
+        "tasks": [
+          "electrolytically reduce alumina to aluminum"
+        ],
+        "outputBasis": {
+          "material_id": "primary",
+          "quantity": 1,
+          "unit": "tonne",
+          "specification": "Primary aluminum metal"
+        },
+        "metrics": [
+          {
+            "id": "alumina-input",
+            "category": "material_consumption",
+            "name": "Alumina feed",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 2,
+            "range": null,
+            "unit": "tonne alumina",
+            "output_basis": {
+              "material_id": "primary",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Primary aluminum metal"
+            },
+            "currency": null,
+            "location": null,
+            "source_period": null,
+            "technology": "Primary aluminum smelting",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "C2",
+                "quote": "On average, 4-6 tonnes of bauxite will produce 2 tonnes of alumina, which will produce 1 tonne of primary aluminium (varies depending on location)."
+              }
+            ]
+          },
+          {
+            "id": "electricity",
+            "category": "energy",
+            "name": "Smelting electricity",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": null,
+            "range": {
+              "low": 14,
+              "high": 15
+            },
+            "unit": "MWh electricity",
+            "output_basis": {
+              "material_id": "primary",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Primary aluminum metal"
+            },
+            "currency": null,
+            "location": "Industry benchmark",
+            "source_period": "2021 JRC report; underlying data older",
+            "technology": "Primary aluminum smelting",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S3",
+                "quote": "Aluminium smelting requires large amounts of electricity, typically around 14-15 MWh per tonne of metal produced"
+              }
+            ]
+          },
+          {
+            "id": "alumina-cost-proxy",
+            "category": "resource_cost",
+            "name": "Illustrative purchased alumina cost ONLY",
+            "scenario": "baseline",
+            "status": "estimate",
+            "value": 1190,
+            "range": null,
+            "unit": "USD",
+            "output_basis": {
+              "material_id": "primary",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Primary aluminum metal"
+            },
+            "currency": "USD",
+            "location": "U.S. import-price scenario; not Saudi plant costs",
+            "source_period": "January–August 2025 price proxy",
+            "technology": "Primary aluminum smelting",
+            "assumptions": [
+              "2 tonnes alumina per tonne aluminum × 595 USD/metric tonne",
+              "Excludes electricity, anodes, labor, capital and other inputs.",
+              "Do not add upstream bauxite purchase costs to this purchased-intermediate cost; that would double count."
+            ],
+            "rationale": "Calculated input-cost scenario, not total smelting cost.",
+            "evidence": [
+              {
+                "source_id": "S7",
+                "quote": "The average prices, f.a.s., for U.S. imports for consumption of crude dry bauxite and metallurgical-grade alumina during the first 8 months of 2025 were $31 per ton and $595 per ton, respectively"
+              },
+              {
+                "source_id": "C2",
+                "quote": "On average, 4-6 tonnes of bauxite will produce 2 tonnes of alumina, which will produce 1 tonne of primary aluminium (varies depending on location)."
+              }
+            ]
+          }
+        ],
+        "automation": [
+          {
+            "task": "electrolytically reduce alumina to aluminum",
+            "technical_feasibility": "unknown",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "primary",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Primary aluminum metal"
+            },
+            "rationale": "No reviewed task-specific automation conclusion for this process in the demo pack.",
+            "constraints": [
+              "Further task-level evidence required"
+            ],
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:collection",
+      "kind": "process",
+      "label": "Collect and sort used cans",
+      "basis": "documented",
+      "rationale": "Used cans come from an earlier generation. Recycling is an incoming branch so this production graph remains acyclic.",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The UBCs may be collected in municipal curbside programs, dropped off programs, or deposit programs."
+        },
+        {
+          "source_id": "S1",
+          "quote": "The shreds are passed under magnetic separators to remove ferrous contamination."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "used_cans",
+            "name": "Used beverage cans from an earlier product generation",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The UBCs may be collected in municipal curbside programs, dropped off programs, or deposit programs."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "sorted_scrap",
+            "name": "Sorted used-can scrap",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The shreds are passed under magnetic separators to remove ferrous contamination."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "us-recovery",
+            "name": "United States can collection",
+            "country_or_region": "United States",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "collection"
+            ],
+            "evidence": [
+              {
+                "source_id": "S2",
+                "quote": "In the United States, 46.1% of aluminium beverage cans consumed were used as feedstock material for recyclers in 2019"
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Historical recovery-system geography. The recovery rate is not a process yield."
+          }
+        ],
+        "tasks": [
+          "collect used beverage cans",
+          "remove ferrous contamination from shredded cans"
+        ],
+        "outputBasis": {
+          "material_id": "sorted_scrap",
+          "quantity": 1,
+          "unit": "tonne",
+          "specification": "Sorted used-can scrap"
+        },
+        "metrics": [],
+        "automation": [
+          {
+            "task": "remove ferrous contamination from shredded cans",
+            "technical_feasibility": "demonstrated",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "sorted_scrap",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Sorted used-can scrap"
+            },
+            "rationale": "Mechanized separation is described in the can recycling process; economic performance is unquantified.",
+            "constraints": [
+              "No matched labor baseline, equipment price, maintenance cost or payback evidence.",
+              "Demonstrated task automation does not mean the whole plant is autonomous."
+            ],
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The shreds are passed under magnetic separators to remove ferrous contamination."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:remelting",
+      "kind": "process",
+      "label": "De-coat and remelt used cans",
+      "basis": "documented",
+      "rationale": "Recycling route; primary top-up and alloy additions are acknowledged but not assigned unsupported quantities.",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The decoating process results in the transfer of the hot metal to the melting furnace."
+        },
+        {
+          "source_id": "S1",
+          "quote": "In addition, alloying additives are also added to meet the final specifications of the ingot to be produced."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "sorted_scrap",
+            "name": "Sorted used-can scrap",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The shreds are passed under magnetic separators to remove ferrous contamination."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "recycled",
+            "name": "Recycled aluminum rolling feedstock",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The decoating process results in the transfer of the hot metal to the melting furnace."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "uk-recycling",
+            "name": "Latchford recycling example",
+            "country_or_region": "United Kingdom",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "remelting"
+            ],
+            "evidence": [
+              {
+                "source_id": "C7",
+                "quote": "Our Latchford recycling center is Europe’s largest used aluminum beverage can recycling plant"
+              }
+            ],
+            "basis": "documented",
+            "rationale": "UK plant location is identified in the captured Novelis page. No U.S.-to-UK shipment is established."
+          }
+        ],
+        "tasks": [
+          "decoat shredded used cans",
+          "remelt scrap and adjust alloy chemistry"
+        ],
+        "outputBasis": {
+          "material_id": "recycled",
+          "quantity": 1,
+          "unit": "tonne",
+          "specification": "Recycled aluminum feedstock for rolling; alloy adjustment may require primary metal"
+        },
+        "metrics": [],
+        "automation": [
+          {
+            "task": "decoat shredded used cans",
+            "technical_feasibility": "unknown",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "recycled",
+              "quantity": 1,
+              "unit": "tonne",
+              "specification": "Recycled aluminum feedstock for rolling; alloy adjustment may require primary metal"
+            },
+            "rationale": "No reviewed task-specific automation conclusion for this process in the demo pack.",
+            "constraints": [
+              "Further task-level evidence required"
+            ],
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:rolling",
+      "kind": "process",
+      "label": "Roll can body and lid sheet",
+      "basis": "documented",
+      "rationale": "Primary and recycled feedstocks can contribute in varying proportions. Incoming edges do not mean one tonne of each is required.",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "primary",
+            "name": "Primary aluminum",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "At the smelter, the alumina – now a powder – goes through the Hall–Héroult electrochemical process to convert it into aluminium metal."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          },
+          {
+            "id": "recycled",
+            "name": "Recycled aluminum rolling feedstock",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The decoating process results in the transfer of the hot metal to the melting furnace."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "sheet",
+            "name": "Can body and lid sheet",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "north-america",
+            "name": "North American can manufacturing benchmark",
+            "country_or_region": "United States; Canada",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "rolling",
+              "forming"
+            ],
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "1,000 aluminum beverage cans manufactured in North America (U.S. and Canada) in the reference year 2016"
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Regional LCA coverage; not specific factories. Default country anchor is illustrative."
+          }
+        ],
+        "tasks": [
+          "hot and cold roll aluminum into sheet",
+          "slit sheet into coils"
+        ],
+        "outputBasis": {
+          "material_id": "sheet",
+          "quantity": 1000,
+          "unit": "kg",
+          "specification": "North American can body and lid sheet, LCA table 3-2"
+        },
+        "metrics": [
+          {
+            "id": "ingot-input",
+            "category": "material_consumption",
+            "name": "Rolling ingot feed",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 1310,
+            "range": null,
+            "unit": "kg ingot",
+            "output_basis": {
+              "material_id": "sheet",
+              "quantity": 1000,
+              "unit": "kg",
+              "specification": "North American can body and lid sheet, LCA table 3-2"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Roll can body and lid sheet",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-2: Sheet rolling unit process Type Flow Value Unit Inputs Aluminum ingot for rolling 1,310 kg Cardboard packaging 0.00605 kg Electricity 1,440 MJ Packaging paper 0.00346 kg Packaging wooden pallets 1.03 kg Paint 4.29 kg Plastic packaging 0.00691 kg Rolling oil 0.968 kg Thermal energy from LPG 0.155 MJ Thermal energy from natural gas 2,910 MJ Water 338 kg Outputs Aluminum sheet 1,000 kg Aluminum scrap for recovery 308 kg"
+              }
+            ]
+          },
+          {
+            "id": "electricity",
+            "category": "energy",
+            "name": "Rolling electricity",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 1440,
+            "range": null,
+            "unit": "MJ electricity",
+            "output_basis": {
+              "material_id": "sheet",
+              "quantity": 1000,
+              "unit": "kg",
+              "specification": "North American can body and lid sheet, LCA table 3-2"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Roll can body and lid sheet",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-2: Sheet rolling unit process Type Flow Value Unit Inputs Aluminum ingot for rolling 1,310 kg Cardboard packaging 0.00605 kg Electricity 1,440 MJ Packaging paper 0.00346 kg Packaging wooden pallets 1.03 kg Paint 4.29 kg Plastic packaging 0.00691 kg Rolling oil 0.968 kg Thermal energy from LPG 0.155 MJ Thermal energy from natural gas 2,910 MJ Water 338 kg Outputs Aluminum sheet 1,000 kg Aluminum scrap for recovery 308 kg"
+              }
+            ]
+          },
+          {
+            "id": "gas-heat",
+            "category": "energy",
+            "name": "Rolling natural gas thermal energy",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 2910,
+            "range": null,
+            "unit": "MJ heat",
+            "output_basis": {
+              "material_id": "sheet",
+              "quantity": 1000,
+              "unit": "kg",
+              "specification": "North American can body and lid sheet, LCA table 3-2"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Roll can body and lid sheet",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-2: Sheet rolling unit process Type Flow Value Unit Inputs Aluminum ingot for rolling 1,310 kg Cardboard packaging 0.00605 kg Electricity 1,440 MJ Packaging paper 0.00346 kg Packaging wooden pallets 1.03 kg Paint 4.29 kg Plastic packaging 0.00691 kg Rolling oil 0.968 kg Thermal energy from LPG 0.155 MJ Thermal energy from natural gas 2,910 MJ Water 338 kg Outputs Aluminum sheet 1,000 kg Aluminum scrap for recovery 308 kg"
+              }
+            ]
+          },
+          {
+            "id": "recovery-scrap",
+            "category": "waste",
+            "name": "Rolling scrap sent for recovery",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 308,
+            "range": null,
+            "unit": "kg scrap",
+            "output_basis": {
+              "material_id": "sheet",
+              "quantity": 1000,
+              "unit": "kg",
+              "specification": "North American can body and lid sheet, LCA table 3-2"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Roll can body and lid sheet",
+            "assumptions": [
+              "Recoverable process scrap, not landfill loss; do not count its acquisition cost twice."
+            ],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-2: Sheet rolling unit process Type Flow Value Unit Inputs Aluminum ingot for rolling 1,310 kg Cardboard packaging 0.00605 kg Electricity 1,440 MJ Packaging paper 0.00346 kg Packaging wooden pallets 1.03 kg Paint 4.29 kg Plastic packaging 0.00691 kg Rolling oil 0.968 kg Thermal energy from LPG 0.155 MJ Thermal energy from natural gas 2,910 MJ Water 338 kg Outputs Aluminum sheet 1,000 kg Aluminum scrap for recovery 308 kg"
+              }
+            ]
+          }
+        ],
+        "automation": [
+          {
+            "task": "hot and cold roll aluminum into sheet",
+            "technical_feasibility": "unknown",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "sheet",
+              "quantity": 1000,
+              "unit": "kg",
+              "specification": "North American can body and lid sheet, LCA table 3-2"
+            },
+            "rationale": "No reviewed task-specific automation conclusion for this process in the demo pack.",
+            "constraints": [
+              "Further task-level evidence required"
+            ],
+            "evidence": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "process:forming",
+      "kind": "process",
+      "label": "Form, finish and inspect empty cans",
+      "basis": "documented",
+      "rationale": "Includes body/lid manufacturing benchmark. Filling and distribution are outside scope.",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The cups then undergo a series of forming, ironing, and punching operations to form the final profile of the can as per the desired specifications."
+        },
+        {
+          "source_id": "S1",
+          "quote": "The cans then undergo a quality control process to check the integrity of the final product before they are shipped to fillers."
+        }
+      ],
+      "attributes": {
+        "inputs": [
+          {
+            "id": "sheet",
+            "name": "Can body and lid sheet",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "outputs": [
+          {
+            "id": "can",
+            "name": "Empty aluminum beverage can and lid",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The cups then undergo a series of forming, ironing, and punching operations to form the final profile of the can as per the desired specifications."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "locations": [
+          {
+            "id": "north-america",
+            "name": "North American can manufacturing benchmark",
+            "country_or_region": "United States; Canada",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "rolling",
+              "forming"
+            ],
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "1,000 aluminum beverage cans manufactured in North America (U.S. and Canada) in the reference year 2016"
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Regional LCA coverage; not specific factories. Default country anchor is illustrative."
+          },
+          {
+            "id": "nz-forming",
+            "name": "Recorp NZ line example",
+            "country_or_region": "New Zealand",
+            "kind": "region",
+            "significance": "Sourced candidate geography for the illustrative route",
+            "stage_ids": [
+              "forming"
+            ],
+            "evidence": [
+              {
+                "source_id": "C6",
+                "quote": "This greenfield project incorporated a Drawn and Ironed can manufacturing line with a capacity of 1800 cans per minute (cpm) that is scalable to 2,400 cpm."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Alternative vendor case study for throughput; not interchangeable with the North American LCA."
+          }
+        ],
+        "tasks": [
+          "form and iron can bodies",
+          "wash, coat and finish cans",
+          "inspect can integrity"
+        ],
+        "outputBasis": {
+          "material_id": "can",
+          "quantity": 1000,
+          "unit": "cans",
+          "specification": "North American LCA average beverage cans and lids; no fixed volume assumed"
+        },
+        "metrics": [
+          {
+            "id": "sheet-input",
+            "category": "material_consumption",
+            "name": "Can sheet feed",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 16,
+            "range": null,
+            "unit": "kg sheet",
+            "output_basis": {
+              "material_id": "can",
+              "quantity": 1000,
+              "unit": "cans",
+              "specification": "North American LCA average beverage cans and lids; no fixed volume assumed"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Form, finish and inspect empty cans",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-3: Can manufacturing unit process Type Flow Value Unit Inputs Aluminum sheet 16.0 kg Coatings 0.457 kg Electricity 109 MJ Inks 0.0144 kg Lubricating oil 0.0394 kg Thermal energy from natural gas 67.5 kg Water 76.0 kg Outputs 2-piece aluminum can 13.5 kg Aluminum post-industrial scrap for recovery 2.50 kg"
+              }
+            ]
+          },
+          {
+            "id": "electricity",
+            "category": "energy",
+            "name": "Can manufacturing electricity",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 109,
+            "range": null,
+            "unit": "MJ electricity",
+            "output_basis": {
+              "material_id": "can",
+              "quantity": 1000,
+              "unit": "cans",
+              "specification": "North American LCA average beverage cans and lids; no fixed volume assumed"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Form, finish and inspect empty cans",
+            "assumptions": [],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-3: Can manufacturing unit process Type Flow Value Unit Inputs Aluminum sheet 16.0 kg Coatings 0.457 kg Electricity 109 MJ Inks 0.0144 kg Lubricating oil 0.0394 kg Thermal energy from natural gas 67.5 kg Water 76.0 kg Outputs 2-piece aluminum can 13.5 kg Aluminum post-industrial scrap for recovery 2.50 kg"
+              }
+            ]
+          },
+          {
+            "id": "scrap",
+            "category": "waste",
+            "name": "Can manufacturing scrap for recovery",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 2.5,
+            "range": null,
+            "unit": "kg scrap",
+            "output_basis": {
+              "material_id": "can",
+              "quantity": 1000,
+              "unit": "cans",
+              "specification": "North American LCA average beverage cans and lids; no fixed volume assumed"
+            },
+            "currency": null,
+            "location": "North America (U.S. and Canada)",
+            "source_period": "2016 reference year; 2021 LCA report",
+            "technology": "Form, finish and inspect empty cans",
+            "assumptions": [
+              "Uses table 3-3 value 2.50 kg, not narrative rounded value 3 kg. Do not silently reconcile the discrepancy."
+            ],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "Table 3-3: Can manufacturing unit process Type Flow Value Unit Inputs Aluminum sheet 16.0 kg Coatings 0.457 kg Electricity 109 MJ Inks 0.0144 kg Lubricating oil 0.0394 kg Thermal energy from natural gas 67.5 kg Water 76.0 kg Outputs 2-piece aluminum can 13.5 kg Aluminum post-industrial scrap for recovery 2.50 kg"
+              }
+            ]
+          },
+          {
+            "id": "line-capacity",
+            "category": "throughput",
+            "name": "Recorp NZ line rated capacity",
+            "scenario": "baseline",
+            "status": "reported",
+            "value": 1800,
+            "range": null,
+            "unit": "cans/minute",
+            "output_basis": {
+              "material_id": "can",
+              "quantity": 1,
+              "unit": "can",
+              "specification": "Recorp NZ drawn-and-ironed can line; size unspecified"
+            },
+            "currency": null,
+            "location": "New Zealand",
+            "source_period": null,
+            "technology": "Form, finish and inspect empty cans",
+            "assumptions": [
+              "Vendor capacity, not sustained saleable throughput; not the North American LCA plant or a conversion factor for its electricity data."
+            ],
+            "rationale": "Sourced process benchmark; not a measurement of the illustrative location.",
+            "evidence": [
+              {
+                "source_id": "C6",
+                "quote": "This greenfield project incorporated a Drawn and Ironed can manufacturing line with a capacity of 1800 cans per minute (cpm) that is scalable to 2,400 cpm."
+              }
+            ]
+          }
+        ],
+        "automation": [
+          {
+            "task": "form and iron can bodies",
+            "technical_feasibility": "demonstrated",
+            "economic_viability": "unknown",
+            "output_basis": {
+              "material_id": "can",
+              "quantity": 1000,
+              "unit": "cans",
+              "specification": "North American LCA average beverage cans and lids; no fixed volume assumed"
+            },
+            "rationale": "A commercial integrated can line is documented by the equipment vendor. Rated capacity is not a labor-replacement percentage.",
+            "constraints": [
+              "No matched labor baseline, equipment price, maintenance cost or payback evidence.",
+              "Demonstrated task automation does not mean the whole plant is autonomous."
+            ],
+            "evidence": [
+              {
+                "source_id": "C6",
+                "quote": "This greenfield project incorporated a Drawn and Ironed can manufacturing line with a capacity of 1800 cans per minute (cpm) that is scalable to 2,400 cpm."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "dependency:ore-to-refinery",
+      "kind": "process_dependency",
+      "source": "process:mining",
+      "target": "process:refining",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "C8",
+          "quote": "After the bauxite is mined, it is refined into alumina before it is ready to be reduced to primary aluminium."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "bauxite",
+            "name": "Bauxite ore",
+            "evidence": [
+              {
+                "source_id": "S4",
+                "quote": "The alumina refinery will refine Saudi Arabian bauxite, supplied from Ma’aden Aluminium’s mine at Al Ba’itha and transported by 600 km rail to Ras Al Khair."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    },
+    {
+      "id": "dependency:alumina-to-smelter",
+      "kind": "process_dependency",
+      "source": "process:refining",
+      "target": "process:smelting",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "C8",
+          "quote": "At the smelter, the alumina – now a powder – goes through the Hall–Héroult electrochemical process to convert it into aluminium metal."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "alumina",
+            "name": "Smelter-grade alumina",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "After the bauxite is mined, it is refined into alumina before it is ready to be reduced to primary aluminium."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    },
+    {
+      "id": "dependency:primary-to-sheet",
+      "kind": "process_dependency",
+      "source": "process:smelting",
+      "target": "process:rolling",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "primary",
+            "name": "Primary aluminum",
+            "evidence": [
+              {
+                "source_id": "C8",
+                "quote": "At the smelter, the alumina – now a powder – goes through the Hall–Héroult electrochemical process to convert it into aluminium metal."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    },
+    {
+      "id": "dependency:scrap-to-remelt",
+      "kind": "process_dependency",
+      "source": "process:collection",
+      "target": "process:remelting",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The decoating process results in the transfer of the hot metal to the melting furnace."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "sorted_scrap",
+            "name": "Sorted used-can scrap",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The shreds are passed under magnetic separators to remove ferrous contamination."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    },
+    {
+      "id": "dependency:recycled-to-sheet",
+      "kind": "process_dependency",
+      "source": "process:remelting",
+      "target": "process:rolling",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "recycled",
+            "name": "Recycled aluminum rolling feedstock",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The decoating process results in the transfer of the hot metal to the melting furnace."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    },
+    {
+      "id": "dependency:sheet-to-can",
+      "kind": "process_dependency",
+      "source": "process:rolling",
+      "target": "process:forming",
+      "basis": "inferred",
+      "evidence": [
+        {
+          "source_id": "S1",
+          "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+        }
+      ],
+      "rationale": "Generic material handoff between process types; no specific cross-border supplier relationship or mixing ratio established.",
+      "attributes": {
+        "materials": [
+          {
+            "id": "sheet",
+            "name": "Can body and lid sheet",
+            "evidence": [
+              {
+                "source_id": "S1",
+                "quote": "The rolling process converts aluminum ingots into can body stock and lid stock coil, which are subsequently converted into can bodies and lids at the can manufacturing plant."
+              }
+            ],
+            "basis": "documented",
+            "rationale": "Generic material in the demonstrated process chain; not a traced batch."
+          }
+        ],
+        "derivation": "explicit"
+      }
+    }
+  ],
+  "gaps": [
+    "No actual complete supplier chain or shipping route is established. Country anchors represent candidate scenarios.",
+    "Mining, refining, collection and UBC-only remelting energy remain unquantified here; route-level energy is separate.",
+    "Prices are explicit U.S. import-price scenarios, not observed costs of the selected geographic route. No complete resource-cost total is supported.",
+    "Labor minutes, automation payback and calibrated automation probabilities are unknown.",
+    "The can LCA table reports 2.50 kg recovered scrap while narrative text rounds to 3 kg; the table value is retained.",
+    "The extracted can-manufacturing thermal-energy row says 67.5 kg, an ambiguous unit; it is omitted pending PDF-level unit verification.",
+    "Primary and recycled feedstock shares and input-output quantities on graph edges are unspecified; metrics must not be blindly summed.",
+    "Process waste includes recoverable scrap; it is not synonymous with landfilled waste. The full bill of ancillary materials is not modeled."
+  ]
+}

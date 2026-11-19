@@ -1,0 +1,1071 @@
+{
+  "format": "forma-project",
+  "version": 1,
+  "project_id": "004d6684-afe7-4ab7-872d-88481564948f",
+  "workspace_id": null,
+  "title": "Autonomous normal-operation cell",
+  "prompt": "Two comparative conceptual empty-can inspection and palletizing spaces",
+  "visibility": "private",
+  "project_ir": {
+    "format": "forma.engineering-result",
+    "schema_version": "1.0",
+    "product": {
+      "format": "forma.product-domains",
+      "manifest": {
+        "schema_version": "1.0",
+        "product_id": "004d6684-afe7-4ab7-872d-88481564948f",
+        "artifacts": [
+          {
+            "artifact_id": "autonomous.mechanical",
+            "domain": "mechanical",
+            "schema_id": "openforma.mechanical",
+            "schema_version": "1.0",
+            "revision": 1,
+            "provider_id": "openforma.native",
+            "provider_version": "1.0",
+            "sha256": "b4a4effcbeeb0a0045dc4b314725970701f7d2549f7d0d5dc277de55cf930101",
+            "locator": null,
+            "provenance": {}
+          },
+          {
+            "artifact_id": "autonomous.process",
+            "domain": "process",
+            "schema_id": "openforma.process",
+            "schema_version": "1.0",
+            "revision": 1,
+            "provider_id": "openforma.native",
+            "provider_version": "1.0",
+            "sha256": "ac6ca65459ac4772acc9b7de3638efda5af80d19ee7d7b5624d436130ece90d6",
+            "locator": null,
+            "provenance": {}
+          }
+        ],
+        "links": []
+      },
+      "artifacts": {
+        "autonomous.mechanical": {
+          "artifact_id": "autonomous.mechanical",
+          "revision": 1,
+          "domain": "mechanical",
+          "schema_version": "1.0",
+          "parts": [
+            {
+              "part_definition_id": "floor",
+              "dimensions_mm": {
+                "width": 12000.0,
+                "depth": 8000.0,
+                "height": 200.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "infeed",
+              "dimensions_mm": {
+                "width": 2200.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "inspection-belt",
+              "dimensions_mm": {
+                "width": 1600.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "camera",
+              "dimensions_mm": {
+                "width": 800.0,
+                "depth": 700.0,
+                "height": 500.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "reject",
+              "dimensions_mm": {
+                "width": 800.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "quarantine",
+              "dimensions_mm": {
+                "width": 1200.0,
+                "depth": 1200.0,
+                "height": 900.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "accumulator",
+              "dimensions_mm": {
+                "width": 2600.0,
+                "depth": 1200.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "pallet",
+              "dimensions_mm": {
+                "width": 1200.0,
+                "depth": 1200.0,
+                "height": 400.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "outfeed",
+              "dimensions_mm": {
+                "width": 2400.0,
+                "depth": 1400.0,
+                "height": 500.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "supplies",
+              "dimensions_mm": {
+                "width": 1800.0,
+                "depth": 1600.0,
+                "height": 1400.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "console",
+              "dimensions_mm": {
+                "width": 1100.0,
+                "depth": 650.0,
+                "height": 1200.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "gantry-left",
+              "dimensions_mm": {
+                "width": 300.0,
+                "depth": 300.0,
+                "height": 2600.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "gantry-right",
+              "dimensions_mm": {
+                "width": 300.0,
+                "depth": 300.0,
+                "height": 2600.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "gantry-bridge",
+              "dimensions_mm": {
+                "width": 2300.0,
+                "depth": 2800.0,
+                "height": 250.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "gripper",
+              "dimensions_mm": {
+                "width": 1100.0,
+                "depth": 1100.0,
+                "height": 250.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "sheet-feeder",
+              "dimensions_mm": {
+                "width": 1500.0,
+                "depth": 1500.0,
+                "height": 2000.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "guard",
+              "dimensions_mm": {
+                "width": 4200.0,
+                "depth": 80.0,
+                "height": 2000.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            }
+          ],
+          "components": [
+            {
+              "object_id": "floor",
+              "ref_des": "floor",
+              "part_definition_id": "floor"
+            },
+            {
+              "object_id": "infeed",
+              "ref_des": "infeed",
+              "part_definition_id": "infeed"
+            },
+            {
+              "object_id": "inspection-belt",
+              "ref_des": "inspection-belt",
+              "part_definition_id": "inspection-belt"
+            },
+            {
+              "object_id": "camera",
+              "ref_des": "camera",
+              "part_definition_id": "camera"
+            },
+            {
+              "object_id": "reject",
+              "ref_des": "reject",
+              "part_definition_id": "reject"
+            },
+            {
+              "object_id": "quarantine",
+              "ref_des": "quarantine",
+              "part_definition_id": "quarantine"
+            },
+            {
+              "object_id": "accumulator",
+              "ref_des": "accumulator",
+              "part_definition_id": "accumulator"
+            },
+            {
+              "object_id": "pallet",
+              "ref_des": "pallet",
+              "part_definition_id": "pallet"
+            },
+            {
+              "object_id": "outfeed",
+              "ref_des": "outfeed",
+              "part_definition_id": "outfeed"
+            },
+            {
+              "object_id": "supplies",
+              "ref_des": "supplies",
+              "part_definition_id": "supplies"
+            },
+            {
+              "object_id": "console",
+              "ref_des": "console",
+              "part_definition_id": "console"
+            },
+            {
+              "object_id": "gantry-left",
+              "ref_des": "gantry-left",
+              "part_definition_id": "gantry-left"
+            },
+            {
+              "object_id": "gantry-right",
+              "ref_des": "gantry-right",
+              "part_definition_id": "gantry-right"
+            },
+            {
+              "object_id": "gantry-bridge",
+              "ref_des": "gantry-bridge",
+              "part_definition_id": "gantry-bridge"
+            },
+            {
+              "object_id": "gripper",
+              "ref_des": "gripper",
+              "part_definition_id": "gripper"
+            },
+            {
+              "object_id": "sheet-feeder",
+              "ref_des": "sheet-feeder",
+              "part_definition_id": "sheet-feeder"
+            },
+            {
+              "object_id": "guard",
+              "ref_des": "guard",
+              "part_definition_id": "guard"
+            }
+          ],
+          "mechanical": null,
+          "cad_model": {
+            "format": "concept_envelopes",
+            "unit": "m",
+            "coordinate_system": "z-up",
+            "placements": [
+              {
+                "id": "floor",
+                "label": "96 m² comparison footprint",
+                "center_m": [
+                  6,
+                  4,
+                  -0.1
+                ],
+                "size_m": [
+                  12,
+                  8,
+                  0.2
+                ],
+                "category": "structure",
+                "description": "Assumed identical room; walls omitted for inspection.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "infeed",
+                "label": "01 / Infeed",
+                "center_m": [
+                  1.3,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  2.2,
+                  0.8,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Empty formed cans enter from the west. Same boundary in both scenarios.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "inspection-belt",
+                "label": "02 / Inspection conveyor",
+                "center_m": [
+                  3.2,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  1.6,
+                  0.8,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Conveyor under the inspection head; integrated equipment envelope.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "camera",
+                "label": "Vision head",
+                "center_m": [
+                  3.2,
+                  4,
+                  1.65
+                ],
+                "size_m": [
+                  0.8,
+                  0.7,
+                  0.5
+                ],
+                "category": "sensor",
+                "description": "Commercial vision capability is evidenced. Camera arrangement and footprint are assumptions.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "reject",
+                "label": "03 / Reject gate",
+                "center_m": [
+                  4.4,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  0.8,
+                  0.8,
+                  0.3
+                ],
+                "category": "sensor",
+                "description": "Automatically divert flagged cans; no claimed accuracy or reject timing.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "quarantine",
+                "label": "Reject / quarantine buffer",
+                "center_m": [
+                  4.4,
+                  5.1,
+                  0.45
+                ],
+                "size_m": [
+                  1.2,
+                  1.2,
+                  0.9
+                ],
+                "category": "reject",
+                "description": "No automatic release of ambiguous cans. Full buffer causes a controlled stop.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "accumulator",
+                "label": "04 / Accumulate accepted cans",
+                "center_m": [
+                  6.1,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  2.6,
+                  1.2,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Decouple inspection from layer formation. Capacity and dwell time unverified.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "pallet",
+                "label": "05 / Pallet build position",
+                "center_m": [
+                  8.6,
+                  4,
+                  0.2
+                ],
+                "size_m": [
+                  1.2,
+                  1.2,
+                  0.4
+                ],
+                "category": "pallet",
+                "description": "Plastic pallet plus separator layers; schematic dimensions only.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "outfeed",
+                "label": "06 / Finished pallet outfeed",
+                "center_m": [
+                  10.6,
+                  4,
+                  0.25
+                ],
+                "size_m": [
+                  2.4,
+                  1.4,
+                  0.5
+                ],
+                "category": "conveyor",
+                "description": "Same eastern output boundary; downstream wrapping and truck loading excluded.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "supplies",
+                "label": "Empty pallets and layer sheets",
+                "center_m": [
+                  9,
+                  6.1,
+                  0.7
+                ],
+                "size_m": [
+                  1.8,
+                  1.6,
+                  1.4
+                ],
+                "category": "storage",
+                "description": "Consumable inventory; replenishment remains an external task in both concepts.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "console",
+                "label": "Supervisory console",
+                "center_m": [
+                  1.4,
+                  1.8,
+                  0.6
+                ],
+                "size_m": [
+                  1.1,
+                  0.65,
+                  1.2
+                ],
+                "category": "sensor",
+                "description": "Batch recipe, quality trend and stop-state display; no production control software connected.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "gantry-left",
+                "label": "Layer palletizer column A",
+                "center_m": [
+                  7.8,
+                  2.8,
+                  1.3
+                ],
+                "size_m": [
+                  0.3,
+                  0.3,
+                  2.6
+                ],
+                "category": "robot",
+                "description": "Concept Cartesian layer-transfer gantry; no cycle-time or load sizing performed.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "gantry-right",
+                "label": "Layer palletizer column B",
+                "center_m": [
+                  9.4,
+                  5.2,
+                  1.3
+                ],
+                "size_m": [
+                  0.3,
+                  0.3,
+                  2.6
+                ],
+                "category": "robot",
+                "description": "Envelope representation, not vendor machinery.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "gantry-bridge",
+                "label": "Layer-transfer bridge",
+                "center_m": [
+                  8.6,
+                  4,
+                  2.7
+                ],
+                "size_m": [
+                  2.3,
+                  2.8,
+                  0.25
+                ],
+                "category": "robot",
+                "description": "Transfers formed layers, not individual cans; mechanical reach unverified.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "gripper",
+                "label": "Layer gripper",
+                "center_m": [
+                  8.2,
+                  4,
+                  2.2
+                ],
+                "size_m": [
+                  1.1,
+                  1.1,
+                  0.25
+                ],
+                "category": "robot",
+                "description": "Proposed full-layer handling; grip integrity and can damage untested.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "sheet-feeder",
+                "label": "Automatic layer-sheet feed",
+                "center_m": [
+                  7,
+                  6.1,
+                  1
+                ],
+                "size_m": [
+                  1.5,
+                  1.5,
+                  2
+                ],
+                "category": "robot",
+                "description": "Automatically feed separators between layers.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "guard",
+                "label": "Cell separation",
+                "center_m": [
+                  8.3,
+                  2.4,
+                  1
+                ],
+                "size_m": [
+                  4.2,
+                  0.08,
+                  2
+                ],
+                "category": "guard",
+                "description": "Schematic partition only; not a qualified protective system.",
+                "basis": "authored concept envelope; not vendor CAD"
+              }
+            ],
+            "source": "model.py",
+            "exports": [
+              "cell.step",
+              "cell.stl"
+            ]
+          }
+        },
+        "autonomous.process": {
+          "artifact_id": "autonomous.process",
+          "revision": 1,
+          "domain": "process",
+          "schema_version": "1.0",
+          "operations": [
+            {
+              "operation_id": "infeed",
+              "operation_type": "infeed",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "infeed / autonomous",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "inspection",
+              "operation_type": "inspection",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Vision inspection flags visible defects; no measured accuracy.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "reject",
+              "operation_type": "reject",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "reject / autonomous",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "quarantine",
+              "operation_type": "quarantine",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Automatic containment; asynchronous review outside normal flow.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "accumulation",
+              "operation_type": "accumulation",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "accumulation / autonomous",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "palletizing",
+              "operation_type": "palletizing",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Gantry places layers and automatic feeder places separators.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "outfeed",
+              "operation_type": "outfeed",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Automatic pallet transfer.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            }
+          ],
+          "streams": [
+            {
+              "stream_id": "infeed-inspection",
+              "source": {
+                "operation_id": "infeed",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "inspection",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "inspection-reject",
+              "source": {
+                "operation_id": "inspection",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "reject",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "reject-quarantine",
+              "source": {
+                "operation_id": "reject",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "quarantine",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "reject-accumulation",
+              "source": {
+                "operation_id": "reject",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "accumulation",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "accumulation-palletizing",
+              "source": {
+                "operation_id": "accumulation",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "palletizing",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "palletizing-outfeed",
+              "source": {
+                "operation_id": "palletizing",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "outfeed",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            }
+          ],
+          "balances": [],
+          "steps": [],
+          "scenarios": [],
+          "evidence": []
+        }
+      },
+      "plan": null,
+      "compatibility": null
+    },
+    "validation": {
+      "local": {
+        "autonomous.mechanical": [],
+        "autonomous.process": []
+      },
+      "composition": [],
+      "blocked_domains": {},
+      "is_valid": true
+    },
+    "evaluations": [],
+    "assumptions": {
+      "mechanical": [
+        "All equipment dimensions and room dimensions are authored assumptions"
+      ],
+      "process": [
+        "60 cans/minute is a comparison target, not computed capacity"
+      ]
+    },
+    "unresolved": [
+      "Representative baseline, not a surveyed factory",
+      "Autonomous means no routine in-cell intervention during normal operation, not zero humans over the lifecycle",
+      "All geometry is conceptual and all equipment footprints are assumed",
+      "No dynamic robot collision, cycle-time, structural, safety or throughput qualification",
+      "No SpaceIR provider used: OpenForma MechanicalIR and ProcessIR own these authored artifacts",
+      "109 MJ per 1000 cans belongs to whole can manufacturing and is NOT assigned to this cell"
+    ],
+    "provenance": {
+      "authoring_agent": "opencode",
+      "authoring_method": "host-authored",
+      "validation": "OpenForma native domain validation",
+      "cad_export": "Forma skill CAD adapter / OpenCAD 0.2.4 / native OCCT"
+    },
+    "status": "partial"
+  },
+  "artifacts": [
+    {
+      "path": "layout.json",
+      "sha256": "e7195721a217493bb7c1290474ba68254ee7a0b7b4ea7a07375049e0e6ccb9c4",
+      "media_type": "application/json",
+      "size_bytes": 11308
+    },
+    {
+      "path": "mechanical.json",
+      "sha256": "d6339538ef5c2fb12f8e5f947d26ded43718699c12319d1f2af453b406ef3d92",
+      "media_type": "application/json",
+      "size_bytes": 13762
+    },
+    {
+      "path": "process.json",
+      "sha256": "bf9dec6a85a9dee6fc6ee7c9f5df7ed8ce6fcb12a9c4c43214575822d7c8d6f1",
+      "media_type": "application/json",
+      "size_bytes": 6772
+    },
+    {
+      "path": "forma-product.json",
+      "sha256": "8900d6f26b44a4acc0ac8843cc3c3085368173f248cf23bcf9f4951fb1a9cb4c",
+      "media_type": "application/json",
+      "size_bytes": 27470
+    },
+    {
+      "path": "forma-validation.json",
+      "sha256": "0036ae62c83468b89e57b814d0fdf9f986f6c1a918b0794c829a593ce1be65ab",
+      "media_type": "application/json",
+      "size_bytes": 156
+    },
+    {
+      "path": "layout-checks.json",
+      "sha256": "e2d4594cc9e69d24473c28c682b395ebb8784bdbe8466f39e7da56232d81c96b",
+      "media_type": "application/json",
+      "size_bytes": 145
+    },
+    {
+      "path": "model.py",
+      "sha256": "5913d54f281a8ea80c607bbbb53ff3f7cc00b4b38db105e0b9747ad3514ed81d",
+      "media_type": "text/x-python",
+      "size_bytes": 442
+    },
+    {
+      "path": "cell.step",
+      "sha256": "3675581006f378a631ab70da7cb954bf3e99af2538683b12fb7b1c6c99224cef",
+      "media_type": "model/step",
+      "size_bytes": 281811
+    },
+    {
+      "path": "cell.stl",
+      "sha256": "2ac74d42f203e4c45219b320ad6d94fa8a37527c6bc39e287ae39b0a8dc59de7",
+      "media_type": "model/stl",
+      "size_bytes": 10284
+    },
+    {
+      "path": "cell.tree.json",
+      "sha256": "91c3f93d4f9e41ec4abffe068e006822741a11b53af63a1b8c23d4fdf32964f8",
+      "media_type": "application/json",
+      "size_bytes": 48420
+    }
+  ]
+}

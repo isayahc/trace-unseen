@@ -1,0 +1,1003 @@
+{
+  "format": "forma-project",
+  "version": 1,
+  "project_id": "3626872a-3a8f-46d0-be4b-c4dcf1ee83fa",
+  "workspace_id": null,
+  "title": "Human-in-the-loop cell",
+  "prompt": "Two comparative conceptual empty-can inspection and palletizing spaces",
+  "visibility": "private",
+  "project_ir": {
+    "format": "forma.engineering-result",
+    "schema_version": "1.0",
+    "product": {
+      "format": "forma.product-domains",
+      "manifest": {
+        "schema_version": "1.0",
+        "product_id": "3626872a-3a8f-46d0-be4b-c4dcf1ee83fa",
+        "artifacts": [
+          {
+            "artifact_id": "human.mechanical",
+            "domain": "mechanical",
+            "schema_id": "openforma.mechanical",
+            "schema_version": "1.0",
+            "revision": 1,
+            "provider_id": "openforma.native",
+            "provider_version": "1.0",
+            "sha256": "c7ba6627e1ba0d95c039faf2040b49dc0c97d35cb9aa3c50260393ebe0e5d86d",
+            "locator": null,
+            "provenance": {}
+          },
+          {
+            "artifact_id": "human.process",
+            "domain": "process",
+            "schema_id": "openforma.process",
+            "schema_version": "1.0",
+            "revision": 1,
+            "provider_id": "openforma.native",
+            "provider_version": "1.0",
+            "sha256": "aed89e87254902dddc5517639789bdb6767140c05bdc4c257171cfdcb8523b09",
+            "locator": null,
+            "provenance": {}
+          }
+        ],
+        "links": []
+      },
+      "artifacts": {
+        "human.mechanical": {
+          "artifact_id": "human.mechanical",
+          "revision": 1,
+          "domain": "mechanical",
+          "schema_version": "1.0",
+          "parts": [
+            {
+              "part_definition_id": "floor",
+              "dimensions_mm": {
+                "width": 12000.0,
+                "depth": 8000.0,
+                "height": 200.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "infeed",
+              "dimensions_mm": {
+                "width": 2200.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "inspection-belt",
+              "dimensions_mm": {
+                "width": 1600.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "camera",
+              "dimensions_mm": {
+                "width": 800.0,
+                "depth": 700.0,
+                "height": 500.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "reject",
+              "dimensions_mm": {
+                "width": 800.0,
+                "depth": 800.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "quarantine",
+              "dimensions_mm": {
+                "width": 1200.0,
+                "depth": 1200.0,
+                "height": 900.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "accumulator",
+              "dimensions_mm": {
+                "width": 2600.0,
+                "depth": 1200.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "pallet",
+              "dimensions_mm": {
+                "width": 1200.0,
+                "depth": 1200.0,
+                "height": 400.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "outfeed",
+              "dimensions_mm": {
+                "width": 2400.0,
+                "depth": 1400.0,
+                "height": 500.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "supplies",
+              "dimensions_mm": {
+                "width": 1800.0,
+                "depth": 1600.0,
+                "height": 1400.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "console",
+              "dimensions_mm": {
+                "width": 1100.0,
+                "depth": 650.0,
+                "height": 1200.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "review-desk",
+              "dimensions_mm": {
+                "width": 1600.0,
+                "depth": 800.0,
+                "height": 900.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "layer-assist",
+              "dimensions_mm": {
+                "width": 800.0,
+                "depth": 1300.0,
+                "height": 300.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "worker-qc",
+              "dimensions_mm": {
+                "width": 500.0,
+                "depth": 500.0,
+                "height": 1800.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            },
+            {
+              "part_definition_id": "worker-pack",
+              "dimensions_mm": {
+                "width": 500.0,
+                "depth": 500.0,
+                "height": 1800.0
+              },
+              "material": null,
+              "geometry_refs": [
+                "cell.step"
+              ]
+            }
+          ],
+          "components": [
+            {
+              "object_id": "floor",
+              "ref_des": "floor",
+              "part_definition_id": "floor"
+            },
+            {
+              "object_id": "infeed",
+              "ref_des": "infeed",
+              "part_definition_id": "infeed"
+            },
+            {
+              "object_id": "inspection-belt",
+              "ref_des": "inspection-belt",
+              "part_definition_id": "inspection-belt"
+            },
+            {
+              "object_id": "camera",
+              "ref_des": "camera",
+              "part_definition_id": "camera"
+            },
+            {
+              "object_id": "reject",
+              "ref_des": "reject",
+              "part_definition_id": "reject"
+            },
+            {
+              "object_id": "quarantine",
+              "ref_des": "quarantine",
+              "part_definition_id": "quarantine"
+            },
+            {
+              "object_id": "accumulator",
+              "ref_des": "accumulator",
+              "part_definition_id": "accumulator"
+            },
+            {
+              "object_id": "pallet",
+              "ref_des": "pallet",
+              "part_definition_id": "pallet"
+            },
+            {
+              "object_id": "outfeed",
+              "ref_des": "outfeed",
+              "part_definition_id": "outfeed"
+            },
+            {
+              "object_id": "supplies",
+              "ref_des": "supplies",
+              "part_definition_id": "supplies"
+            },
+            {
+              "object_id": "console",
+              "ref_des": "console",
+              "part_definition_id": "console"
+            },
+            {
+              "object_id": "review-desk",
+              "ref_des": "review-desk",
+              "part_definition_id": "review-desk"
+            },
+            {
+              "object_id": "layer-assist",
+              "ref_des": "layer-assist",
+              "part_definition_id": "layer-assist"
+            },
+            {
+              "object_id": "worker-qc",
+              "ref_des": "worker-qc",
+              "part_definition_id": "worker-qc"
+            },
+            {
+              "object_id": "worker-pack",
+              "ref_des": "worker-pack",
+              "part_definition_id": "worker-pack"
+            }
+          ],
+          "mechanical": null,
+          "cad_model": {
+            "format": "concept_envelopes",
+            "unit": "m",
+            "coordinate_system": "z-up",
+            "placements": [
+              {
+                "id": "floor",
+                "label": "96 m² comparison footprint",
+                "center_m": [
+                  6,
+                  4,
+                  -0.1
+                ],
+                "size_m": [
+                  12,
+                  8,
+                  0.2
+                ],
+                "category": "structure",
+                "description": "Assumed identical room; walls omitted for inspection.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "infeed",
+                "label": "01 / Infeed",
+                "center_m": [
+                  1.3,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  2.2,
+                  0.8,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Empty formed cans enter from the west. Same boundary in both scenarios.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "inspection-belt",
+                "label": "02 / Inspection conveyor",
+                "center_m": [
+                  3.2,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  1.6,
+                  0.8,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Conveyor under the inspection head; integrated equipment envelope.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "camera",
+                "label": "Vision head",
+                "center_m": [
+                  3.2,
+                  4,
+                  1.65
+                ],
+                "size_m": [
+                  0.8,
+                  0.7,
+                  0.5
+                ],
+                "category": "sensor",
+                "description": "Commercial vision capability is evidenced. Camera arrangement and footprint are assumptions.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "reject",
+                "label": "03 / Reject gate",
+                "center_m": [
+                  4.4,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  0.8,
+                  0.8,
+                  0.3
+                ],
+                "category": "sensor",
+                "description": "Automatically divert flagged cans; no claimed accuracy or reject timing.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "quarantine",
+                "label": "Reject / quarantine buffer",
+                "center_m": [
+                  4.4,
+                  5.1,
+                  0.45
+                ],
+                "size_m": [
+                  1.2,
+                  1.2,
+                  0.9
+                ],
+                "category": "reject",
+                "description": "No automatic release of ambiguous cans. Full buffer causes a controlled stop.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "accumulator",
+                "label": "04 / Accumulate accepted cans",
+                "center_m": [
+                  6.1,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  2.6,
+                  1.2,
+                  0.3
+                ],
+                "category": "conveyor",
+                "description": "Decouple inspection from layer formation. Capacity and dwell time unverified.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "pallet",
+                "label": "05 / Pallet build position",
+                "center_m": [
+                  8.6,
+                  4,
+                  0.2
+                ],
+                "size_m": [
+                  1.2,
+                  1.2,
+                  0.4
+                ],
+                "category": "pallet",
+                "description": "Plastic pallet plus separator layers; schematic dimensions only.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "outfeed",
+                "label": "06 / Finished pallet outfeed",
+                "center_m": [
+                  10.6,
+                  4,
+                  0.25
+                ],
+                "size_m": [
+                  2.4,
+                  1.4,
+                  0.5
+                ],
+                "category": "conveyor",
+                "description": "Same eastern output boundary; downstream wrapping and truck loading excluded.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "supplies",
+                "label": "Empty pallets and layer sheets",
+                "center_m": [
+                  9,
+                  6.1,
+                  0.7
+                ],
+                "size_m": [
+                  1.8,
+                  1.6,
+                  1.4
+                ],
+                "category": "storage",
+                "description": "Consumable inventory; replenishment remains an external task in both concepts.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "console",
+                "label": "Supervisory console",
+                "center_m": [
+                  1.4,
+                  1.8,
+                  0.6
+                ],
+                "size_m": [
+                  1.1,
+                  0.65,
+                  1.2
+                ],
+                "category": "sensor",
+                "description": "Batch recipe, quality trend and stop-state display; no production control software connected.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "review-desk",
+                "label": "Human exception review",
+                "center_m": [
+                  3.0,
+                  6.1,
+                  0.45
+                ],
+                "size_m": [
+                  1.6,
+                  0.8,
+                  0.9
+                ],
+                "category": "manual",
+                "description": "Operator reviews reject samples, quality trends and uncertain results.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "layer-assist",
+                "label": "Assisted layer-transfer table",
+                "center_m": [
+                  7.5,
+                  4,
+                  0.85
+                ],
+                "size_m": [
+                  0.8,
+                  1.3,
+                  0.3
+                ],
+                "category": "manual",
+                "description": "Mechanized accumulation and assisted transfer; operator initiates layer/pallet change.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "worker-qc",
+                "label": "Operator A / Quality",
+                "center_m": [
+                  2.8,
+                  5.2,
+                  0.9
+                ],
+                "size_m": [
+                  0.5,
+                  0.5,
+                  1.8
+                ],
+                "category": "human",
+                "description": "One assumed quality/exception role; no labor utilization measurement.",
+                "basis": "authored concept envelope; not vendor CAD"
+              },
+              {
+                "id": "worker-pack",
+                "label": "Operator B / Packing",
+                "center_m": [
+                  8,
+                  2.5,
+                  0.9
+                ],
+                "size_m": [
+                  0.5,
+                  0.5,
+                  1.8
+                ],
+                "category": "human",
+                "description": "One assumed pallet/layer handling role; duty cycle and ergonomics unmeasured.",
+                "basis": "authored concept envelope; not vendor CAD"
+              }
+            ],
+            "source": "model.py",
+            "exports": [
+              "cell.step",
+              "cell.stl"
+            ]
+          }
+        },
+        "human.process": {
+          "artifact_id": "human.process",
+          "revision": 1,
+          "domain": "process",
+          "schema_version": "1.0",
+          "operations": [
+            {
+              "operation_id": "infeed",
+              "operation_type": "infeed",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "infeed / human",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "inspection",
+              "operation_type": "inspection",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Vision inspection flags visible defects; no measured accuracy.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "reject",
+              "operation_type": "reject",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "reject / human",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "quarantine",
+              "operation_type": "quarantine",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Operator A reviews rejected samples; retained cans remain quarantined.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "accumulation",
+              "operation_type": "accumulation",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "accumulation / human",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "palletizing",
+              "operation_type": "palletizing",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Operator B initiates assisted layer transfer and places separators.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            },
+            {
+              "operation_id": "outfeed",
+              "operation_type": "outfeed",
+              "capability_version": "conceptual",
+              "ports": [
+                {
+                  "port_id": "in",
+                  "direction": "in",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                },
+                {
+                  "port_id": "out",
+                  "direction": "out",
+                  "kind": "material",
+                  "quantity_kind": null,
+                  "phase": "solid"
+                }
+              ],
+              "description": "Operator B authorizes pallet exchange with handling equipment.",
+              "model_fidelity": "conceptual",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Host-authored process topology, not observed operation."
+              }
+            }
+          ],
+          "streams": [
+            {
+              "stream_id": "infeed-inspection",
+              "source": {
+                "operation_id": "infeed",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "inspection",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "inspection-reject",
+              "source": {
+                "operation_id": "inspection",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "reject",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "reject-quarantine",
+              "source": {
+                "operation_id": "reject",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "quarantine",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "reject-accumulation",
+              "source": {
+                "operation_id": "reject",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "accumulation",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "accumulation-palletizing",
+              "source": {
+                "operation_id": "accumulation",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "palletizing",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            },
+            {
+              "stream_id": "palletizing-outfeed",
+              "source": {
+                "operation_id": "palletizing",
+                "port_id": "out"
+              },
+              "target": {
+                "operation_id": "outfeed",
+                "port_id": "in"
+              },
+              "kind": "material",
+              "quantity": null,
+              "phase": "solid",
+              "claim": {
+                "basis": "assumed",
+                "source_ids": [],
+                "rationale": "Topology only; rate unknown."
+              }
+            }
+          ],
+          "balances": [],
+          "steps": [],
+          "scenarios": [],
+          "evidence": []
+        }
+      },
+      "plan": null,
+      "compatibility": null
+    },
+    "validation": {
+      "local": {
+        "human.mechanical": [],
+        "human.process": []
+      },
+      "composition": [],
+      "blocked_domains": {},
+      "is_valid": true
+    },
+    "evaluations": [],
+    "assumptions": {
+      "mechanical": [
+        "All equipment dimensions and room dimensions are authored assumptions"
+      ],
+      "process": [
+        "60 cans/minute is a comparison target, not computed capacity"
+      ]
+    },
+    "unresolved": [
+      "Representative baseline, not a surveyed factory",
+      "Autonomous means no routine in-cell intervention during normal operation, not zero humans over the lifecycle",
+      "All geometry is conceptual and all equipment footprints are assumed",
+      "No dynamic robot collision, cycle-time, structural, safety or throughput qualification",
+      "No SpaceIR provider used: OpenForma MechanicalIR and ProcessIR own these authored artifacts",
+      "109 MJ per 1000 cans belongs to whole can manufacturing and is NOT assigned to this cell"
+    ],
+    "provenance": {
+      "authoring_agent": "opencode",
+      "authoring_method": "host-authored",
+      "validation": "OpenForma native domain validation",
+      "cad_export": "Forma skill CAD adapter / OpenCAD 0.2.4 / native OCCT"
+    },
+    "status": "partial"
+  },
+  "artifacts": [
+    {
+      "path": "layout.json",
+      "sha256": "42d8ce1ac4d38d058e756a71d3fc101490f05f25e0316ad48d52cb60022aa950",
+      "media_type": "application/json",
+      "size_bytes": 10557
+    },
+    {
+      "path": "mechanical.json",
+      "sha256": "0e4a84a393562073a2e8229a7a668f963dd2538c340ab5104df746ae50301d8a",
+      "media_type": "application/json",
+      "size_bytes": 12275
+    },
+    {
+      "path": "process.json",
+      "sha256": "d3b446200e1e1e03e255f3b36705883b34c6ba19671676b4d2a7c9b5973c9a24",
+      "media_type": "application/json",
+      "size_bytes": 6802
+    },
+    {
+      "path": "forma-product.json",
+      "sha256": "01880babe350e70bcb732bda9f07c7b6166d24ac63305bd49f46cd881d6713dc",
+      "media_type": "application/json",
+      "size_bytes": 25667
+    },
+    {
+      "path": "forma-validation.json",
+      "sha256": "e959a7c3e9049dcbb675102ab23a27d7c7057d8d35cce4c1508dca658c037cd8",
+      "media_type": "application/json",
+      "size_bytes": 146
+    },
+    {
+      "path": "layout-checks.json",
+      "sha256": "e2d4594cc9e69d24473c28c682b395ebb8784bdbe8466f39e7da56232d81c96b",
+      "media_type": "application/json",
+      "size_bytes": 145
+    },
+    {
+      "path": "model.py",
+      "sha256": "5913d54f281a8ea80c607bbbb53ff3f7cc00b4b38db105e0b9747ad3514ed81d",
+      "media_type": "text/x-python",
+      "size_bytes": 442
+    },
+    {
+      "path": "cell.step",
+      "sha256": "9cbf6a8649f852cbd6aa644e9d9456e8422d4e4042e4209ce36de59f8a049ab9",
+      "media_type": "model/step",
+      "size_bytes": 248193
+    },
+    {
+      "path": "cell.stl",
+      "sha256": "b5ccb6bfbbb4ef6a3a9be6fd224bf3b9efda644cd2b05c5aef437406cdc3eac8",
+      "media_type": "model/stl",
+      "size_bytes": 9084
+    },
+    {
+      "path": "cell.tree.json",
+      "sha256": "2844f3b93849dbde36c2ac60c18999dec5781cb251b6cb374723143c32eba664",
+      "media_type": "application/json",
+      "size_bytes": 42884
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import { resolve } from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { researchJobs } from "./src/server/research-jobs.js";
 import { serializeJourney } from "./src/research/graph.js";
+import { so101Plugin } from "./src/server/so101.js";
 
 function snapshots(request: IncomingMessage, response: ServerResponse, next: () => void) {
   if (request.url?.split("?")[0] !== "/api/journeys") return next();
@@ -37,4 +38,4 @@ const researchApi: Plugin = {
   configureServer(server) { server.middlewares.use(researchJobs); server.middlewares.use(snapshots); },
   configurePreviewServer(server) { server.middlewares.use(researchJobs); server.middlewares.use(snapshots); },
 };
-export default defineConfig({ plugins: [researchApi], server: { fs: { deny: ["**/.env*", "**/data/**", "**/.git/**"] } } });
+export default defineConfig({ plugins: [researchApi, so101Plugin()], server: { fs: { deny: ["**/.env*", "**/data/**", "**/.git/**"] } } });

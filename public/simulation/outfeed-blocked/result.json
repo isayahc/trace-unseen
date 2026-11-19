@@ -1,0 +1,218 @@
+{
+  "status": "failed",
+  "error": "outfeed blocked: loaded pallet held at packing station",
+  "engine": "MuJoCo",
+  "version": "3.17.0",
+  "fault": "outfeed-blocked",
+  "simulated_seconds": 256.2200000004953,
+  "physics_steps": 128110,
+  "warning_count": 0,
+  "model_sha256": "af8f297bc55aaab0052da3d812812d9ad63d7173f7a4b4d035d741d566084eba",
+  "events": [
+    {
+      "time_s": 0.8,
+      "state": "infeed",
+      "can": 0
+    },
+    {
+      "time_s": 7.78,
+      "state": "inspection",
+      "can": 0,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 7.78,
+      "state": "accept",
+      "can": 0
+    },
+    {
+      "time_s": 31.44,
+      "state": "vacuum-transfer",
+      "can": 0
+    },
+    {
+      "time_s": 46.42,
+      "state": "packed",
+      "can": 0,
+      "observed_position": [
+        8.400002765304297,
+        3.799999137216794,
+        0.4579900345148866
+      ],
+      "support_contact": true
+    },
+    {
+      "time_s": 59.12,
+      "state": "infeed",
+      "can": 1
+    },
+    {
+      "time_s": 66.1,
+      "state": "inspection",
+      "can": 1,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 66.1,
+      "state": "accept",
+      "can": 1
+    },
+    {
+      "time_s": 84.78,
+      "state": "vacuum-transfer",
+      "can": 1
+    },
+    {
+      "time_s": 100.56,
+      "state": "packed",
+      "can": 1,
+      "observed_position": [
+        8.800002245661371,
+        3.8000000411010255,
+        0.45799000069998547
+      ],
+      "support_contact": true
+    },
+    {
+      "time_s": 113.26,
+      "state": "infeed",
+      "can": 2
+    },
+    {
+      "time_s": 120.24,
+      "state": "inspection",
+      "can": 2,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 120.24,
+      "state": "reject",
+      "can": 2
+    },
+    {
+      "time_s": 137.7,
+      "state": "vacuum-transfer",
+      "can": 2
+    },
+    {
+      "time_s": 150.56,
+      "state": "quarantined",
+      "can": 2,
+      "observed_position": [
+        4.40000524561293,
+        5.100000753976778,
+        0.4079900529328108
+      ],
+      "support_contact": true
+    },
+    {
+      "time_s": 159.96,
+      "state": "infeed",
+      "can": 3
+    },
+    {
+      "time_s": 166.94,
+      "state": "inspection",
+      "can": 3,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 166.94,
+      "state": "accept",
+      "can": 3
+    },
+    {
+      "time_s": 184.4,
+      "state": "vacuum-transfer",
+      "can": 3
+    },
+    {
+      "time_s": 199.38,
+      "state": "packed",
+      "can": 3,
+      "observed_position": [
+        8.40000249569923,
+        4.200000510778914,
+        0.45799007034221517
+      ],
+      "support_contact": true
+    },
+    {
+      "time_s": 212.08,
+      "state": "infeed",
+      "can": 4
+    },
+    {
+      "time_s": 219.06,
+      "state": "inspection",
+      "can": 4,
+      "classifier": "scripted test fixture"
+    },
+    {
+      "time_s": 219.06,
+      "state": "accept",
+      "can": 4
+    },
+    {
+      "time_s": 237.74,
+      "state": "vacuum-transfer",
+      "can": 4
+    },
+    {
+      "time_s": 253.52,
+      "state": "packed",
+      "can": 4,
+      "observed_position": [
+        8.80000169491746,
+        4.200000174003497,
+        0.457990018885375
+      ],
+      "support_contact": true
+    },
+    {
+      "time_s": 256.22,
+      "state": "pallet-outfeed"
+    },
+    {
+      "time_s": 256.22,
+      "state": "stopped",
+      "reason": "outfeed blocked: loaded pallet held at packing station"
+    }
+  ],
+  "final_positions": {
+    "can0": [
+      8.40000330935486,
+      3.7999973021225806,
+      0.45798998100636157
+    ],
+    "can1": [
+      8.800002743087587,
+      3.7999996726643284,
+      0.4579900586090212
+    ],
+    "can2": [
+      4.400004650494549,
+      5.0999984906236495,
+      0.40798997567847856
+    ],
+    "can3": [
+      8.400002154060866,
+      4.199999053878072,
+      0.4579899815071134
+    ],
+    "can4": [
+      8.800002252060047,
+      4.200001036605561,
+      0.45799007969893796
+    ]
+  },
+  "assumptions": [
+    "Scripted classification: can 2 is defective; no vision model.",
+    "Ideal vacuum weld with proximity and support interlocks; no suction physics.",
+    "Serial single-can transfer, not the proposed full-layer palletizer.",
+    "Carrier shuttle substitutes for continuous belt/reject gate.",
+    "Rigid cans; no crushing, air drag, jam clearing, separator dispensing or replenishment.",
+    "5x replay; 60 cans/minute is not validated.",
+    "Forma envelopes are visual-only; carrier, pallet, quarantine and cans have collision geometry."
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "product": "Aluminum beverage can",
+  "prepared_at": "2026-11-19T20:12:37.540Z",
+  "purpose": "Reviewed raw evidence and storyboard inputs for the hackathon; route-level comparisons are NOT process metrics.",
+  "route_comparison": {
+    "id": "primary-vs-recycled-energy",
+    "name": "Change the feedstock. Change the energy footprint.",
+    "unit": "GJ of primary energy per tonne of aluminum",
+    "primary": 186,
+    "recycled": 8.3,
+    "reported_reduction_percent": 95.5,
+    "derived": {
+      "reduction_percent": 95.53763440860214,
+      "difference_GJ_per_tonne": 177.7,
+      "formula": "100 * (1 - recycled / primary)",
+      "input_source_ids": [
+        "C1"
+      ]
+    },
+    "boundary": "Primary: mine to cast house. Recycled: IAI secondary-aluminum production benchmark. Excludes subsequent can-sheet rolling, can manufacture, filling and distribution.",
+    "source_period": "Primary benchmark 2019; recycled proxy uses European/North American datasets from differing years; modeling software 2022.2.",
+    "comparability": "Published IAI illustrative comparison, not a matched-factory experiment or a guaranteed can-specific saving. Primary energy includes upstream energy and is not metered electricity.",
+    "aggregation_rule": "Do not add these route totals to stage energy metrics or multiply by an electricity tariff.",
+    "evidence": [
+      {
+        "source_id": "C1",
+        "quote": "In 2019, the primary energy consumption for global primary aluminium production, from mine to cast house, was 186 gigajoules per tonne. In contrast, the primary energy demand for recycled aluminium was 8.3 gigajoules per tonne, resulting in a significant energy saving (95.5%)."
+      }
+    ],
+    "qualification_evidence": [
+      {
+        "source_id": "C1",
+        "quote": "There is no global estimate for energy consumption for aluminium produced from scrap."
+      }
+    ]
+  },
+  "process_benchmarks": [
+    {
+      "id": "refining-bauxite",
+      "process": "alumina_refining",
+      "category": "material_consumption",
+      "value": null,
+      "range": {
+        "low": 2,
+        "high": 3
+      },
+      "unit": "tonne bauxite",
+      "output_basis": {
+        "quantity": 1,
+        "unit": "tonne",
+        "specification": "alumina"
+      },
+      "status": "reported",
+      "scope": "General Bayer-process benchmark; ore composition varies; source period unspecified.",
+      "evidence": [
+        {
+          "source_id": "C8",
+          "quote": "Two to three tonnes of bauxite are required to produce one tonne of alumina"
+        }
+      ]
+    },
+    {
+      "id": "refining-residue",
+      "process": "alumina_refining",
+      "category": "waste",
+      "value": null,
+      "range": {
+        "low": 1,
+        "high": 1.5
+      },
+      "unit": "tonne bauxite residue",
+      "output_basis": {
+        "quantity": 1,
+        "unit": "tonne",
+        "specification": "alumina"
+      },
+      "status": "reported",
+      "scope": "General industry range; residue moisture basis and site-specific handling costs unspecified. Not all residue is disposed of.",
+      "evidence": [
+        {
+          "source_id": "C3",
+          "quote": "For every 1 tonne of alumina, 1–1.5 tonnes of bauxite residue is produced."
+        }
+      ]
+    },
+    {
+      "id": "smelting-alumina",
+      "process": "primary_smelting",
+      "category": "material_consumption",
+      "value": 2,
+      "range": null,
+      "unit": "tonne alumina",
+      "output_basis": {
+        "quantity": 1,
+        "unit": "tonne",
+        "specification": "primary aluminum"
+      },
+      "status": "reported",
+      "scope": "Approximate average, varies by location; not a full mass balance including anodes and other inputs.",
+      "evidence": [
+        {
+          "source_id": "C2",
+          "quote": "On average, 4-6 tonnes of bauxite will produce 2 tonnes of alumina, which will produce 1 tonne of primary aluminium (varies depending on location)."
+        }
+      ]
+    },
+    {
+      "id": "can-line-capacity",
+      "process": "can_manufacturing",
+      "category": "throughput",
+      "value": 1800,
+      "range": null,
+      "unit": "cans/minute",
+      "output_basis": {
+        "quantity": 1,
+        "unit": "can",
+        "specification": "drawn-and-ironed can on the cited Recorp NZ line; dimensions unspecified"
+      },
+      "status": "reported",
+      "scope": "Vendor-reported installed line capacity, not measured sustained saleable output. 2,400 cpm is scalability, not the stated installed capacity.",
+      "evidence": [
+        {
+          "source_id": "C6",
+          "quote": "This greenfield project incorporated a Drawn and Ironed can manufacturing line with a capacity of 1800 cans per minute (cpm) that is scalable to 2,400 cpm."
+        }
+      ]
+    }
+  ],
+  "automation_evidence": [
+    {
+      "id": "sensor-sorting",
+      "task": "Separate aluminum from heavy-metal contaminants",
+      "technical_feasibility": "demonstrated",
+      "economic_viability": "unknown",
+      "scope": "Vendor-described commercial XRT equipment; mixed-metal sorting is not proof of can-alloy separation or complete automation of a recycling plant.",
+      "constraints": [
+        "Feed composition, particle size and purity/recovery tradeoff",
+        "Capital cost, labor baseline, maintenance and local throughput not available"
+      ],
+      "evidence": [
+        {
+          "source_id": "C4",
+          "quote": "X-TRACT™ is a high throughput sorting solution that harnesses the power of dual energy x-ray transmission (XRT) to detect and separate objects based on their atomic density."
+        }
+      ]
+    },
+    {
+      "id": "can-line",
+      "task": "Form drawn-and-ironed cans",
+      "technical_feasibility": "demonstrated",
+      "economic_viability": "unknown",
+      "scope": "Integrated commercial machinery deployment; no measured labor-displacement or payback claim.",
+      "evidence": [
+        {
+          "source_id": "C6",
+          "quote": "Belvac provided all necessary manufacturing equipment, ancillary systems, container designs and facility arrangements, in addition to managing the mechanical and electrical design and installation, commissioning, optimization and personnel training."
+        }
+      ]
+    }
+  ],
+  "circularity": {
+    "name": "Back on the shelf in about 60 days",
+    "value": 60,
+    "unit": "days",
+    "qualifier": "about",
+    "scope": "Novelis illustrative consumption-to-refilling claim, published September 8, 2021; not a guaranteed duration, process throughput, or tracked shipment.",
+    "evidence": [
+      {
+        "source_id": "C5",
+        "quote": "Have a look at the can’s journey from consumption and recycling to refilling in about 60 days."
+      }
+    ]
+  },
+  "storyboard": [
+    {
+      "step": 1,
+      "reveal": "An ordinary can hides a global industrial journey",
+      "data": "journey.json / graph.json"
+    },
+    {
+      "step": 2,
+      "reveal": "Refining consumes 2–3 tonnes of ore and creates 1–1.5 tonnes of residue per tonne of alumina",
+      "data": [
+        "refining-bauxite",
+        "refining-residue"
+      ]
+    },
+    {
+      "step": 3,
+      "reveal": "Switch from the primary route to recycled feedstock",
+      "data": "primary-vs-recycled-energy"
+    },
+    {
+      "step": 4,
+      "reveal": "See where automation is already demonstrated",
+      "data": [
+        "sensor-sorting",
+        "can-line",
+        "can-line-capacity"
+      ]
+    },
+    {
+      "step": 5,
+      "reveal": "Open the evidence behind every number",
+      "data": "curated-sources.json"
+    }
+  ],
+  "missing_data": [
+    "Matched location/year energy tariffs and purchase prices",
+    "Per-stage resource costs",
+    "Labor minutes per output unit",
+    "Automation capex, opex and payback",
+    "Can dimensions, alloy split, mass and forming yield required for a defensible per-can conversion",
+    "Continuous measured throughput versus equipment capacity"
+  ]
+}

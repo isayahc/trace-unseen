@@ -10,6 +10,7 @@
     "research:journey": "node --env-file-if-exists=.env --import tsx src/jobs/discover-tasks.ts --agent journey-researcher",
     "research": "node --env-file-if-exists=.env --import tsx src/jobs/discover-tasks.ts",
     "research:check": "node --env-file-if-exists=.env --import tsx src/jobs/discover-tasks.ts --check",
+    "demo:load": "node --import tsx src/jobs/load-demo.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test src/**/*.test.ts"
   },

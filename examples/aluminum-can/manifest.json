@@ -1,0 +1,19 @@
+{
+  "id": "demo-aluminum-can-v1",
+  "created_at": "2026-11-19T20:15:42.788Z",
+  "status": "completed",
+  "product": "Aluminum beverage can — primary vs recycled",
+  "agent": "reviewed-demo-curation",
+  "original_run": "2026-11-19T20-09-46-797Z-a871b66e",
+  "source_count": 18,
+  "task_count": 0,
+  "process_count": 7,
+  "metric_count": 14,
+  "curation": [
+    "Restored full document text from saved extraction responses; no evidence invented to pass validation.",
+    "Replaced weak title/table-of-contents citations with supporting passages.",
+    "Rebuilt material references and task links; excluded unsupported numeric, scope-mismatched and wrongly attributed claims.",
+    "Separated route-level energy and system recovery statistics from stage metrics.",
+    "Added independently captured benchmark evidence and labeled calculations and conflicting source values."
+  ]
+}
