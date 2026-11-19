@@ -30,6 +30,14 @@ export function persist(path: string, manifest: { id: string }, sources: Source[
         source_id TEXT NOT NULL, target_id TEXT NOT NULL, kind TEXT NOT NULL, data_json TEXT NOT NULL,
         PRIMARY KEY(run_id,edge_id), FOREIGN KEY(run_id,source_id) REFERENCES graph_nodes(run_id,node_id),
         FOREIGN KEY(run_id,target_id) REFERENCES graph_nodes(run_id,node_id));
+      CREATE TABLE IF NOT EXISTS process_metrics (
+        run_id TEXT NOT NULL REFERENCES research_runs(id), process_id TEXT NOT NULL,
+        metric_id TEXT NOT NULL, category TEXT NOT NULL, scenario TEXT NOT NULL, metric_json TEXT NOT NULL,
+        PRIMARY KEY(run_id,process_id,metric_id));
+      CREATE TABLE IF NOT EXISTS automation_assessments (
+        run_id TEXT NOT NULL REFERENCES research_runs(id), process_id TEXT NOT NULL,
+        assessment_index INTEGER NOT NULL, assessment_json TEXT NOT NULL,
+        PRIMARY KEY(run_id,process_id,assessment_index));
       BEGIN;
     `);
     db.prepare("INSERT INTO research_runs VALUES (?, ?)").run(manifest.id, JSON.stringify(manifest));
@@ -38,6 +46,10 @@ export function persist(path: string, manifest: { id: string }, sources: Source[
     const taskInsert = db.prepare("INSERT INTO task_findings VALUES (?, ?, ?)");
     tasks.forEach((task, i) => taskInsert.run(manifest.id, `T${i + 1}`, JSON.stringify(task)));
     if (journey) {
+      for (const stage of journey.stages) {
+        for (const metric of stage.metrics ?? []) db.prepare("INSERT INTO process_metrics VALUES (?,?,?,?,?,?)").run(manifest.id, stage.id, metric.id, metric.category, metric.scenario, JSON.stringify(metric));
+        for (const [i, assessment] of (stage.automation ?? []).entries()) db.prepare("INSERT INTO automation_assessments VALUES (?,?,?,?)").run(manifest.id, stage.id, i, JSON.stringify(assessment));
+      }
       const graph = serializeJourney(journey, manifest.id);
       db.prepare("INSERT INTO product_graphs VALUES (?, ?, ?)").run(manifest.id, graph.schemaVersion, JSON.stringify(graph));
       const nodeInsert = db.prepare("INSERT INTO graph_nodes VALUES (?, ?, ?, ?)");

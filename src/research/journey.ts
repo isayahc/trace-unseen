@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { Source } from "./schema.js";
 import { normalizeEvidence } from "./evidence.js";
 import { assertDag } from "./dependencies.js";
+import { outputBasisSchema, processMetricSchema, automationSchema } from "./metrics.js";
 
 const text = z.string().trim().min(1);
 const evidence = z.array(z.object({ source_id: text, quote: z.string().min(15) })).min(1);
@@ -13,6 +14,9 @@ export const journeySchema = z.object({
   stages: z.array(z.object({
     id: text, name: text, inputs: z.array(text).min(1), outputs: z.array(text).min(1),
     tasks: z.array(text), ...claim,
+    output_basis: outputBasisSchema.nullable().optional(),
+    metrics: z.array(processMetricSchema).optional(),
+    automation: z.array(automationSchema).optional(),
   })).min(1),
   places: z.array(z.object({
     id: text, name: text, country_or_region: text,
@@ -46,6 +50,12 @@ export function validateJourney(value: unknown, sources: Source[]): Journey {
     for (const ref of refs) if (!known.has(ref)) throw new Error(`Unknown journey reference: ${ref}`);
   };
   for (const stage of journey.stages) requireIDs([...stage.inputs, ...stage.outputs], materials);
+  for (const stage of journey.stages) {
+    ids(stage.metrics ?? []);
+    const bases = [stage.output_basis, ...(stage.metrics ?? []).map((m) => m.output_basis), ...(stage.automation ?? []).map((a) => a.output_basis)];
+    for (const basis of bases) if (basis && !stage.outputs.includes(basis.material_id)) throw new Error(`Metric output basis must reference an output of ${stage.id}`);
+    for (const assessment of stage.automation ?? []) if (!stage.tasks.includes(assessment.task)) throw new Error(`Automation task must belong to ${stage.id}`);
+  }
   for (const place of journey.places) requireIDs(place.stage_ids, stages);
   for (const dependency of journey.dependencies ?? []) {
     requireIDs([dependency.source_process_id, dependency.target_process_id], stages);
@@ -62,7 +72,7 @@ export function validateJourney(value: unknown, sources: Source[]): Journey {
     requireIDs(line.material_ids, materials);
   }
   const normalize = normalizeEvidence;
-  for (const item of [...journey.materials, ...journey.stages, ...journey.places, ...journey.supply_lines, ...(journey.dependencies ?? [])]) {
+  for (const item of [...journey.materials, ...journey.stages, ...journey.places, ...journey.supply_lines, ...(journey.dependencies ?? []), ...journey.stages.flatMap((s) => [...(s.metrics ?? []), ...(s.automation ?? [])])]) {
     for (const citation of item.evidence) {
       const source = sources.find((s) => s.id === citation.source_id);
       if (!source || !normalize(source.content).includes(normalize(citation.quote))) {

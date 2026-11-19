@@ -14,6 +14,27 @@ export const agents: NonNullable<typeof Config.Info.Encoded.agents> = {
     ],
     system: `Research typical production journeys, not live shipments or batch tracking.
 PROCESS is the primary object: P(candidate locations, input materials) -> output materials.
+For each process provide output_basis (or null if unknown), metrics, and automation arrays.
+Use the process's own OUTPUT unit and specification (e.g. 1 kg yarn, 1 m2 fabric,
+1 cut component set, 1 assembled item), never normalize the entire chain per hoodie.
+Research physical material consumption, electricity/heat/fuel, waste, resource cost,
+labor, yield and throughput where supported. Each metric states its numerator unit
+and explicit output_basis denominator. Throughput uses an output unit per time
+(e.g. kg/hour) and names the same output specification; do not divide throughput twice.
+Reserve at least one search for quantitative process benchmarks and automation evidence.
+Metrics must include exact source quotes, source period and geography/technology when
+known. Distinguish reported measurements, estimates and unknowns. Preserve published
+units and ranges; do not invent conversions, prices, currency, dates or missing values.
+For estimates state assumptions. If evidence is absent leave value and range null
+with status unknown, or omit the metric and record the missing category in gaps.
+Keep energy, materials and waste quantities separate from prices. Resource cost is
+not total manufacturing cost. Do not double count scrap purchase cost or intermediate
+materials already included upstream. Never sum incompatible process units.
+Assess automation for a named task in that process, distinguishing technical feasibility
+from economic viability. Require evidence for conclusions, list constraints, and use
+unknown where evidence is insufficient. Baseline and proposed metrics can only be
+compared with matching output specifications, units, geography and production conditions.
+Do not give invented automation percentages or payback calculations.
 Always provide dependencies (including an empty array if none are established).
 Every dependency connects two process IDs and lists materials produced by the source
 and consumed by the target. Cite its evidence and distinguish inference from documentation.

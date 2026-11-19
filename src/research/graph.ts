@@ -7,6 +7,9 @@ export type GraphNode = {
   attributes: {
     inputs: Journey["materials"]; outputs: Journey["materials"];
     locations: Journey["places"]; tasks: string[];
+    outputBasis: Journey["stages"][number]["output_basis"];
+    metrics: NonNullable<Journey["stages"][number]["metrics"]>;
+    automation: NonNullable<Journey["stages"][number]["automation"]>;
   };
 };
 export type GraphEdge = {
@@ -31,7 +34,8 @@ export function serializeJourney(journey: Journey, runId: string): ProductGraph 
     id: `process:${stage.id}`, kind: "process", label: stage.name, basis: stage.basis,
     rationale: stage.rationale, evidence: stage.evidence,
     attributes: { inputs: materials(stage.inputs), outputs: materials(stage.outputs),
-      locations: journey.places.filter((place) => place.stage_ids.includes(stage.id)), tasks: stage.tasks },
+      locations: journey.places.filter((place) => place.stage_ids.includes(stage.id)), tasks: stage.tasks,
+      outputBasis: stage.output_basis ?? null, metrics: stage.metrics ?? [], automation: stage.automation ?? [] },
   }));
   const edges: GraphEdge[] = [];
   if (journey.dependencies !== undefined) {
