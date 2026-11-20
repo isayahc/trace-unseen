@@ -84,7 +84,7 @@ export function AutomationSpaces() {
     return () => controller.abort();
   },[]);
   return <section className="spaces-view">
-    <div className="spaces-heading"><span className="eyebrow">AUTONOMOUS WORKSPACE</span><h2>SO-101. Live physics.</h2><p>Articulated robot · inspect, grasp, sort and release</p></div>
+    <div className="spaces-heading"><span className="eyebrow">AUTONOMOUS WORKSPACE</span><h2>A connected factory cell.</h2><p>Sourced industrial assets · powered conveyors · SO-101 sorting · verified dispatch</p></div>
     {error && <p role="alert">{error}</p>}{!layouts.length && !error && <p>Loading saved Forma spaces…</p>}
     <LiveSO101/>
     <details className="earlier-spaces"><summary>Earlier Forma floor-plan concepts and CAD downloads</summary>

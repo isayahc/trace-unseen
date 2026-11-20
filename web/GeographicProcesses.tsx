@@ -42,7 +42,15 @@ export function GeographicProcesses({ graph, sources }: { graph: ProductGraph; s
     return from && to ? [{ ...edge, startLat: from.lat, startLng: from.lng, endLat: to.lat, endLng: to.lng,
       local: from.region === to.region, label: `${from.node.label} (${from.region}) → ${to.node.label} (${to.region})` }] : [];
   });
-  return <div className="geo-processes"><div className="geo-canvas" ref={holder}>
+  return <div className="geo-processes">
+    <div className="geo-overview"><div className="geo-title"><div><span className="eyebrow">GLOBAL MATERIAL ATLAS</span><h1>Geographic journey</h1></div><span className="geo-count">{located.length}/{graph.nodes.length} processes located</span></div>
+      <p>One candidate location per process · illustrative routes, not confirmed suppliers or live shipments.</p>
+      <ol className="geo-path" aria-label="Journey processes">{graph.nodes.map((node, index) => {
+        const location = located.find((p) => p.node.id === node.id);
+        return <li key={node.id}><button aria-pressed={selected?.id === node.id} onClick={() => { setSelected(node); if (location) globe.current?.pointOfView({ lat: location.lat, lng: location.lng, altitude: 1.6 }, 700); }}><b>{index + 1}. {location?.region ?? "Location unknown"}</b><span>{node.label}</span></button></li>;
+      })}</ol>
+    </div>
+    <div className="geo-stage"><div className="geo-canvas" ref={holder}>
     {webgl ? <Globe ref={globe} width={size.width} height={size.height} backgroundColor="#08151d"
       globeImageUrl="https://unpkg.com/three-globe/example/img/earth-night.jpg" atmosphereColor="#45adbb"
       pointsData={groups} pointColor={() => "#51dfcb"} pointRadius={0.6} pointAltitude={0.03}
@@ -50,19 +58,14 @@ export function GeographicProcesses({ graph, sources }: { graph: ProductGraph; s
       onPointClick={(point) => setSelected((point as typeof groups[number]).nodes[0])}
       arcsData={connections.filter((edge) => !edge.local)} arcColor={() => "#edbc6b"} arcStroke={0.9} arcDashLength={0.35} arcDashGap={0.15} arcDashAnimateTime={2200}
       onArcClick={(edge) => setSelected(edge as typeof connections[number])}
-      onGlobeReady={() => globe.current?.pointOfView({ lat: 20, lng: 25, altitude: 2.5 })}
+      onGlobeReady={() => globe.current?.pointOfView({ lat: 20, lng: 25, altitude: 1.6 })}
     /> : <p>WebGL is unavailable; use the process/location selectors below.</p>}
-  </div><div className="geo-connections"><b>Geographic journey · {located.length}/{graph.nodes.length} processes located</b>
-    <p>Illustrative route using one candidate location per process—not a confirmed supplier chain. Dashed, moving lines show direction, not live shipments.</p>
-    <ol className="geo-path">{graph.nodes.map((node, index) => {
-      const location = located.find((p) => p.node.id === node.id);
-      return <li key={node.id}><button onClick={() => { setSelected(node); if (location) globe.current?.pointOfView({ lat: location.lat, lng: location.lng, altitude: 2 }, 700); }}><b>{index + 1}. {location?.region ?? "Location unknown"}</b><span>{node.label}</span></button></li>;
-    })}</ol>
+    </div>{selected && <article className="geo-selection"><button onClick={() => setSelected(undefined)}>Close details</button><ProcessDetails selected={selected} sources={sources}/></article>}</div>
+    <div className="geo-connections">
     <p>{connections.filter((e) => !e.local).length} geographic links · {connections.filter((e) => e.local).length} same-region handoffs. Process order can branch; arrows follow the saved dependencies.</p>
     <details><summary>Change candidate locations</summary>{graph.nodes.map((node) => <label className="location-choice" key={node.id}>{node.label}<select aria-label={`Location for ${node.label}`} value={choices[node.id] ?? alternatives.get(node.id)?.[0] ?? ""} onChange={(e) => { setChoices({ ...choices, [node.id]: e.target.value }); setSelected(node); }}>
       <option value="">Unplaced / unknown</option>{alternatives.get(node.id)!.map((region) => <option key={region} value={region}>{region} (candidate)</option>)}
     </select></label>)}</details>
-    {connections.map((edge) => <button key={edge.id} onClick={() => setSelected(edge)}>{edge.label}</button>)}
-    {selected && <article><button onClick={() => setSelected(undefined)}>Close details</button><ProcessDetails selected={selected} sources={sources}/></article>}
+    <details><summary>View process handoffs ({connections.length})</summary><div className="geo-handoffs">{connections.map((edge) => <button key={edge.id} onClick={() => setSelected(edge)}>{edge.label}</button>)}</div></details>
   </div></div>;
 }

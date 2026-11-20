@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { GeographicProcesses } from "./GeographicProcesses.js";
 import type { Journey } from "../src/research/journey.js";
 import "./style.css";
+import "./workspace.css";
 import { ProductGraph } from "./ProductGraph.js";
 import type { ProductGraph as Graph } from "../src/research/graph.js";
 import { AutomationSpaces } from "./AutomationSpaces.js";
@@ -12,6 +13,13 @@ type Job = { id: string; product: string; status: "running" | "completed" | "fai
 function App() {
   const [snapshots, setSnapshots] = useState<Snapshot[]>([]);
   const [view, setView] = useState<"graph" | "globe" | "spaces">("globe");
+  const [researchCollapsed, setResearchCollapsed] = useState(() => localStorage.getItem("trace-unseen-research-collapsed") === "true");
+  function toggleResearch() {
+    setResearchCollapsed((collapsed) => {
+      localStorage.setItem("trace-unseen-research-collapsed", String(!collapsed));
+      return !collapsed;
+    });
+  }
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<string>();
   const [error, setError] = useState("");
@@ -69,11 +77,12 @@ function App() {
     })}</details>;
   }
   return <><header><div><span className="brand">TRACE / UNSEEN</span><p>Material journeys. A world of connections.</p></div><button onClick={() => void load()}>Refresh research ↻</button></header>
-    <main className={view === "spaces" ? "spaces-mode" : undefined}><section className="atlas"><div className="atlas-heading"><span className="eyebrow">GLOBAL MATERIAL ATLAS</span><h1>Follow the material.<br/><em>Understand the journey.</em></h1><p>Research snapshots · not live shipments</p></div>
+    <main className={view === "spaces" ? "spaces-mode" : researchCollapsed ? "research-collapsed" : undefined}><section className="atlas"><div className="workspace-toolbar">
       <nav className="view-switch" aria-label="Visualization"><button aria-pressed={view === "graph"} onClick={() => setView("graph")}>Product graph</button><button aria-pressed={view === "globe"} onClick={() => setView("globe")}>Geographic globe</button><button aria-pressed={view === "spaces"} onClick={() => setView("spaces")}>Automation spaces</button></nav>
+      {view !== "spaces" && <button className="research-toggle" aria-expanded={!researchCollapsed} aria-controls="research-sidebar" onClick={toggleResearch}>{researchCollapsed ? "Show research panel +" : "Hide research panel −"}</button>}</div>
       <div className="globe">{view === "spaces" ? <AutomationSpaces/> : snapshot?.graph ? view === "graph" ? <ProductGraph key={snapshot.id} graph={snapshot.graph} sources={snapshot.sources}/> : <GeographicProcesses key={snapshot.id} graph={snapshot.graph} sources={snapshot.sources}/> : <p className="fallback">Select a saved research snapshot to display its processes.</p>}</div>
       <footer>{view === "spaces" ? <><span>SO-101 / Live MuJoCo workspace</span><p>Native-scale articulated robot model · bench-scale sorting · simulated hardware</p></> : <><span>Processes are nodes · Materials travel on arrows</span><p>Locations are candidate attributes. Geographic scenarios do not establish actual supplier routes.</p></>}</footer>
-    </section><aside>
+    </section><aside id="research-sidebar" aria-label="Research panel" hidden={researchCollapsed}>
       <form onSubmit={startResearch} className="research-form"><label className="eyebrow" htmlFor="product">WHAT WOULD YOU LIKE TO TRACE?</label><input id="product" value={product} onChange={(e) => setProduct(e.target.value)} minLength={3} maxLength={200} required placeholder="e.g. sneakers or Nike fleece hoodie"/><button disabled={starting || job?.status === "running"} type="submit">{starting ? "Starting…" : job?.status === "running" ? "Research in progress…" : "Research product journey →"}</button><div className="examples">{["Sneakers", "Nike fleece hoodie"].map((example) => <button type="button" key={example} onClick={() => setProduct(example)}>{example}</button>)}</div><p>Researches materials, component processes, assembly, places, and possible routes. Uses your configured model and Tavily credits.</p></form>
       {job && <div className="job" role="status"><b>{job.product}</b><p>{job.stage}</p><small>{job.status}</small>{job.runId && <p>Run: <code>{job.runId}</code></p>}</div>}{jobError && <p role="alert">{jobError}</p>}
       {loading && <p role="status">Loading saved research…</p>}{error && <p role="alert">{error}</p>}

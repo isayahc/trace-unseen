@@ -45,6 +45,10 @@ export function so101Plugin(): Plugin {
       } catch { res.statusCode = 400; res.end('{"error":"Invalid simulation command"}'); }
     });
   }
-  function stop() { const worker = child; child = undefined; worker?.stdin.end(); worker?.kill(); scene = undefined; state = undefined; }
-  return { name: "live-so101", configureServer(server) { server.middlewares.use(middleware); server.httpServer?.once("close", stop); }, configurePreviewServer(server) { server.middlewares.use(middleware); server.httpServer.once("close", stop); } };
+  function stop() { const worker = child; child = undefined; worker?.stdin.end(); worker?.kill(); scene = undefined; state = undefined; error = undefined; }
+  return { name: "live-so101", configureServer(server) {
+    server.middlewares.use(middleware); server.httpServer?.once("close", stop);
+    server.watcher.add(resolve("simulation/so101"));
+    server.watcher.on("change", file => { if (file.replaceAll("\\", "/").includes("/simulation/so101/") && file.endsWith(".py")) { stop(); server.ws.send({ type: "full-reload" }); } });
+  }, configurePreviewServer(server) { server.middlewares.use(middleware); server.httpServer.once("close", stop); } };
 }
