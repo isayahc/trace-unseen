@@ -1,4 +1,4 @@
-# Live SO-101 workcell
+# Live SO-101 factory cell
 
 Run the app, open **Automation spaces**, and press **Run autonomous task**.
 The workspace uses the actual articulated SO-101 link assets supplied by the user:
@@ -31,17 +31,20 @@ the local API plugin and virtual environment present.
   link dimensions, masses, inertias, joint limits and torque-limited actuators.
 - Detailed Draco-compressed GLBs for the arm from NYCRoboGarden; the full upstream
   wrist-roll follower and moving-jaw STLs supply the omitted gripper.
-- Three free rigid-body 36 mm diameter × 60 mm tall, 14 g aluminum sample cans.
-- Presentation pucks, two receiving trays, a workbench, and an illustrative
-  overhead inspection-camera fixture. These fixtures are authored geometry;
-  they are not vendor CAD. This is a reachable bench-scale sorting station,
-  not the old 12 m gantry layout or full-size beverage-can palletizer.
-- Autonomous state machine: approach → inspect → descend → grasp → lift →
-  transfer → place → release → retreat → verify, repeated for all three cans.
-- Red can goes to quarantine; the other two go to the acceptance tray. This is
+- Six free rigid-body 36 mm diameter × 60 mm tall, 14 g aluminum sample cans.
+- Sourced IFRA/Cranfield conveyor CAD, AWS RoboMaker warehouse building,
+  storage racks, pallet jack, inventory, desk and RealSense D435 CAD.
+  The assumed factory footprint is 12 × 8 m. Conveyor width is adapted to
+  native SO-101 reach; surrounding warehouse equipment is static context.
+- Connected process: powered infeed → scripted inspection → physical finger
+  grasp → quarantine or powered outfeed → settled dispatch verification.
+- Red can goes to quarantine; the other five go to dispatch. This is
   a **scripted classifier fixture**, not image inference. The camera is visual.
 - MuJoCo handles gravity, torque-driven joints, finger contact, friction, release,
-  can/table contacts, and settling. Browser poses come from `mjData`.
+  belt/can contacts, and settling. Browser poses come from `mjData`.
+- Belts use velocity-actuated sliding collision surfaces. Uniform belt phase
+  wraps periodically; product positions are never rewritten. Imported display
+  geometry is paired with authored physics proxies and mounting hardware.
 
 The original concave finger meshes produce unusable filled-in convex collision
 hulls when passed directly to MuJoCo. The detailed visible meshes remain intact;
@@ -60,11 +63,15 @@ and non-finite states stop the controller. Phase timeouts stop failed moves.
 
 ```powershell
 .venv-mujoco\Scripts\python.exe simulation/so101/verify.py
+.venv-mujoco\Scripts\python.exe simulation/so101/verify_factory.py
 ```
 
 This runs actual physics and verifies all three placements, pause/resume, reset,
 and a negative test: disabling finger contacts must cause grasp failure without
 counting any can as sorted. Evidence is written to `data/so101-verification.json`.
+The factory verification additionally checks powered transport, dispatch contact,
+inspection-unavailable and blocked-outfeed fault stops. Normal factory state is
+saved in `data/factory-verification.json`; six cans complete in about 177 simulated seconds.
 `diagnose.py` prints transitions; optional `--images` saves debugging screenshots
 in the approved local temporary directory. No video is produced.
 
@@ -72,6 +79,11 @@ in the approved local temporary directory. No video is produced.
 
 - `cell.py`: constructs the workcell around the upstream MJCF, solves constrained
   end-effector IK, controls joint targets, and verifies contact-driven outcomes.
+- `factory.py` / `factory_scene.py`: connected-line controller, sourced asset
+  placements, belt actuators and collision proxies. `Cell` retains the earlier
+  tabletop test; the live bridge instantiates `FactoryCell`.
+- `web/factoryAssets.ts`: cached Collada loading, units/up-axis handling and
+  bottom-center fitting to the explicit scene dimensions.
 - `serve.py`: line-delimited JSON bridge with a 500 Hz simulation step, paced in
   20 ms wall-clock batches; state publication approximately 20 Hz. Expensive IK
   can temporarily reduce real-time speed; time shown is simulation time.
@@ -83,6 +95,12 @@ in the approved local temporary directory. No video is produced.
   explicitly to keep native mesh coordinates aligned with physics.
 
 ## Asset provenance
+
+`public/factory/provenance.json` records pinned IFRA and AWS source revisions,
+URLs, file sizes and hashes. `public/factory/camera/provenance.json` records the
+RealSense source. Each asset family retains its license. `fetch_factory_assets.py`
+downloads the pinned conveyor and warehouse assets. The viewer exposes source
+links and Factory floor / Working cell / Gripper / Dispatch camera presets.
 
 `public/robots/so101/` retains the supplied README, Apache-2.0 license, five-joint
 URDF, collision meshes and original visual GLBs without geometric modification.

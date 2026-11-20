@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ASSETS = ROOT/'public/robots/so101/upstream'
 LINK_OFFSETS = {'base':[.016826,-7e-9,.0336], 'shoulder':[-.0191992,.001162469,-.0091], 'upper_arm':[-.059118,-.0131,.02014993], 'lower_arm':[-.066551,.00345,.02019965], 'wrist':[-.00217,-.026935,.02214943]}
 
-def build():
+def build(factory=False):
     tree = ET.parse(ASSETS/'so101.xml')
     root = tree.getroot()
     root.find('compiler').set('meshdir', str(ASSETS/'assets'))
@@ -54,11 +54,14 @@ def build():
     for g in world.findall('.//geom'):
         if 'name' not in g.attrib:
             g.set('name',f'part-{len([x for x in root.findall(".//geom") if "name" in x.attrib])}')
+    if factory:
+        from factory_scene import configure
+        configure(root)
     return mj.MjModel.from_xml_string(ET.tostring(root,encoding='unicode'))
 
 class Cell:
-    def __init__(self):
-        self.m = build()
+    def __init__(self, factory=False):
+        self.m = build(factory)
         self.d = mj.MjData(self.m)
         self.ikdata = mj.MjData(self.m)
         self.phase='ready'
@@ -73,7 +76,7 @@ class Cell:
         self.site=self.m.site('pickup').id
         self.qstart=np.array([0,-1,1,0,0,.8])
         self.d.qpos[:6]=self.qstart
-        self.d.ctrl[:]=self.qstart
+        self.d.ctrl[:6]=self.qstart
         mj.mj_forward(self.m,self.d)
         self.d.qpos[:5]=self.ik([.20,0,.10])
         self.d.ctrl[:5]=self.d.qpos[:5]

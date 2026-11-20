@@ -4,7 +4,7 @@ import queue
 import sys
 import threading
 import time
-from cell import Cell
+from factory import FactoryCell
 
 commands=queue.Queue()
 def reader():
@@ -13,7 +13,7 @@ def reader():
         except ValueError:pass
     commands.put({'command':'shutdown'})
 threading.Thread(target=reader,daemon=True).start()
-cell=Cell()
+cell=FactoryCell()
 def emit(kind,value):print(json.dumps({'type':kind,'value':value},allow_nan=False),flush=True)
 emit('scene',cell.scene())
 last=0

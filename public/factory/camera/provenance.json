@@ -1,0 +1,12 @@
+[
+  {
+    "file": "LICENSE",
+    "source": "https://raw.githubusercontent.com/realsenseai/realsense-ros/960306819f45006ca3f903aa046bed32c509679a/LICENSE",
+    "sha256": "7092398b52290edddcb41c6e2297f4c6343eb315ea6c83edfdbeea2a73adfbdb"
+  },
+  {
+    "file": "d435.dae",
+    "source": "https://raw.githubusercontent.com/realsenseai/realsense-ros/960306819f45006ca3f903aa046bed32c509679a/realsense2_description/meshes/d435.dae",
+    "sha256": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78"
+  }
+]
